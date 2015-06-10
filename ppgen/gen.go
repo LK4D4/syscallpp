@@ -13,19 +13,32 @@ import (
 	"strings"
 )
 
-var arches = []string{
-	"386",
-	"amd64",
-	"arm",
-	"arm64",
-	"ppc64",
-	"ppc64le",
+var osArches = map[string][]string{
+	"linux": {
+		"386",
+		"amd64",
+		"arm",
+		"arm64",
+		"ppc64",
+		"ppc64le",
+	},
+	"darwin": {
+		"386",
+		"amd64",
+		"arm",
+		"arm64",
+	},
+	"freebsd": {
+		"386",
+		"amd64",
+		"arm",
+	},
 }
 
 var (
-	numFileName  = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsysnum_linux_%s.go")
-	funcFileName = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsyscall_linux_%s.go")
-	outFileName  = "syscallpp_linux_%s.go"
+	numFileName  = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsysnum_%s_%s.go")
+	funcFileName = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsyscall_%s_%s.go")
+	outFileName  = "syscallpp_%s_%s.go"
 )
 
 type sc struct {
@@ -38,6 +51,7 @@ type generator struct {
 	buf      bytes.Buffer
 	syscalls []sc
 	arch     string
+	OS       string
 }
 
 func (g *generator) writeHeader() {
@@ -45,7 +59,8 @@ func (g *generator) writeHeader() {
 	g.buf.WriteString("\n")
 	g.buf.WriteString("// +build ")
 	g.buf.WriteString(g.arch)
-	g.buf.WriteString(",linux")
+	g.buf.WriteString(",")
+	g.buf.WriteString(g.OS)
 	g.buf.WriteString("\n\n")
 	g.buf.WriteString("package syscallpp")
 }
@@ -92,8 +107,8 @@ func (g *generator) writeGetArgsTypesFunc() {
 	g.buf.WriteString("}\n")
 }
 
-func parseFuncs(arch string) (map[string][]string, error) {
-	funcFile := fmt.Sprintf(funcFileName, arch)
+func parseFuncs(OS, arch string) (map[string][]string, error) {
+	funcFile := fmt.Sprintf(funcFileName, OS, arch)
 	fs := token.NewFileSet()
 	parsedFile, err := parser.ParseFile(fs, funcFile, nil, 0)
 	if err != nil {
@@ -130,14 +145,14 @@ func parseFuncs(arch string) (map[string][]string, error) {
 	return funcs, nil
 }
 
-func parseSyscalls(arch string) ([]sc, error) {
-	numFile := fmt.Sprintf(numFileName, arch)
+func parseSyscalls(OS, arch string) ([]sc, error) {
+	numFile := fmt.Sprintf(numFileName, OS, arch)
 	fs := token.NewFileSet()
 	parsedFile, err := parser.ParseFile(fs, numFile, nil, 0)
 	if err != nil {
 		return nil, err
 	}
-	funcs, err := parseFuncs(arch)
+	funcs, err := parseFuncs(OS, arch)
 	if err != nil {
 		return nil, err
 	}
@@ -171,15 +186,16 @@ func parseSyscalls(arch string) ([]sc, error) {
 	return syscalls, nil
 }
 
-func writePkg(arch string) error {
-	outFile := fmt.Sprintf(outFileName, arch)
-	scs, err := parseSyscalls(arch)
+func writePkg(OS, arch string) error {
+	outFile := fmt.Sprintf(outFileName, OS, arch)
+	scs, err := parseSyscalls(OS, arch)
 	if err != nil {
 		return err
 	}
 	g := &generator{
 		syscalls: scs,
 		arch:     arch,
+		OS:       OS,
 	}
 	g.writeHeader()
 	g.writeGetNameFunc()
@@ -208,9 +224,11 @@ func writePkg(arch string) error {
 }
 
 func main() {
-	for _, arch := range arches {
-		if err := writePkg(arch); err != nil {
-			panic(err)
+	for OS, arches := range osArches {
+		for _, arch := range arches {
+			if err := writePkg(OS, arch); err != nil {
+				panic(err)
+			}
 		}
 	}
 }

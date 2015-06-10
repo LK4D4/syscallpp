@@ -6,54 +6,126 @@ package syscallpp
 
 func GetName(num int) string {
 	switch num {
+	case 0:
+		return "restart_syscall"
 	case 1:
 		return "exit"
+	case 2:
+		return "fork"
 	case 3:
 		return "read"
 	case 4:
 		return "write"
+	case 5:
+		return "open"
 	case 6:
 		return "close"
+	case 7:
+		return "waitpid"
+	case 8:
+		return "creat"
+	case 9:
+		return "link"
+	case 10:
+		return "unlink"
+	case 11:
+		return "execve"
 	case 12:
 		return "chdir"
 	case 13:
 		return "time"
+	case 14:
+		return "mknod"
+	case 15:
+		return "chmod"
 	case 16:
 		return "lchown"
+	case 17:
+		return "break"
+	case 18:
+		return "oldstat"
+	case 19:
+		return "lseek"
 	case 20:
 		return "getpid"
 	case 21:
 		return "mount"
+	case 22:
+		return "umount"
+	case 23:
+		return "setuid"
 	case 24:
 		return "getuid"
+	case 25:
+		return "stime"
 	case 26:
 		return "ptrace"
+	case 27:
+		return "alarm"
+	case 28:
+		return "oldfstat"
 	case 29:
 		return "pause"
 	case 30:
 		return "utime"
+	case 31:
+		return "stty"
+	case 32:
+		return "gtty"
+	case 33:
+		return "access"
+	case 34:
+		return "nice"
+	case 35:
+		return "ftime"
 	case 36:
 		return "sync"
 	case 37:
 		return "kill"
+	case 38:
+		return "rename"
+	case 39:
+		return "mkdir"
+	case 40:
+		return "rmdir"
 	case 41:
 		return "dup"
 	case 42:
 		return "pipe"
 	case 43:
 		return "times"
+	case 44:
+		return "prof"
+	case 45:
+		return "brk"
+	case 46:
+		return "setgid"
 	case 47:
 		return "getgid"
+	case 48:
+		return "signal"
 	case 49:
 		return "geteuid"
 	case 50:
 		return "getegid"
 	case 51:
 		return "acct"
+	case 52:
+		return "umount2"
+	case 53:
+		return "lock"
+	case 54:
+		return "ioctl"
 	case 55:
 		return "fcntl"
+	case 56:
+		return "mpx"
 	case 57:
 		return "setpgid"
+	case 58:
+		return "ulimit"
+	case 59:
+		return "oldolduname"
 	case 60:
 		return "umask"
 	case 61:
@@ -64,12 +136,24 @@ func GetName(num int) string {
 		return "dup2"
 	case 64:
 		return "getppid"
+	case 65:
+		return "getpgrp"
 	case 66:
 		return "setsid"
+	case 67:
+		return "sigaction"
+	case 68:
+		return "sgetmask"
+	case 69:
+		return "ssetmask"
 	case 70:
 		return "setreuid"
 	case 71:
 		return "setregid"
+	case 72:
+		return "sigsuspend"
+	case 73:
+		return "sigpending"
 	case 74:
 		return "sethostname"
 	case 75:
@@ -88,8 +172,22 @@ func GetName(num int) string {
 		return "setgroups"
 	case 82:
 		return "select"
+	case 83:
+		return "symlink"
+	case 84:
+		return "oldlstat"
+	case 85:
+		return "readlink"
+	case 86:
+		return "uselib"
+	case 87:
+		return "swapon"
 	case 88:
 		return "reboot"
+	case 89:
+		return "readdir"
+	case 90:
+		return "mmap"
 	case 91:
 		return "munmap"
 	case 92:
@@ -104,44 +202,110 @@ func GetName(num int) string {
 		return "getpriority"
 	case 97:
 		return "setpriority"
+	case 98:
+		return "profil"
+	case 99:
+		return "statfs"
+	case 100:
+		return "fstatfs"
 	case 101:
 		return "ioperm"
+	case 102:
+		return "socketcall"
+	case 103:
+		return "syslog"
+	case 104:
+		return "setitimer"
+	case 105:
+		return "getitimer"
 	case 106:
 		return "stat"
 	case 107:
 		return "lstat"
 	case 108:
 		return "fstat"
+	case 109:
+		return "olduname"
 	case 110:
 		return "iopl"
+	case 111:
+		return "vhangup"
+	case 112:
+		return "idle"
+	case 113:
+		return "vm86old"
 	case 114:
 		return "wait4"
+	case 115:
+		return "swapoff"
 	case 116:
 		return "sysinfo"
+	case 117:
+		return "ipc"
 	case 118:
 		return "fsync"
+	case 119:
+		return "sigreturn"
+	case 120:
+		return "clone"
 	case 121:
 		return "setdomainname"
 	case 122:
 		return "uname"
+	case 123:
+		return "modify_ldt"
 	case 124:
 		return "adjtimex"
 	case 125:
 		return "mprotect"
+	case 126:
+		return "sigprocmask"
+	case 127:
+		return "create_module"
+	case 128:
+		return "init_module"
+	case 129:
+		return "delete_module"
+	case 130:
+		return "get_kernel_syms"
+	case 131:
+		return "quotactl"
 	case 132:
 		return "getpgid"
 	case 133:
 		return "fchdir"
+	case 134:
+		return "bdflush"
+	case 135:
+		return "sysfs"
+	case 136:
+		return "personality"
+	case 137:
+		return "afs_syscall"
 	case 138:
 		return "setfsuid"
 	case 139:
 		return "setfsgid"
+	case 140:
+		return "_llseek"
 	case 141:
 		return "getdents"
+	case 142:
+		return "_newselect"
 	case 143:
 		return "flock"
+	case 144:
+		return "msync"
+	case 145:
+		return "readv"
+	case 146:
+		return "writev"
+	case 147:
+		return "getsid"
 	case 148:
 		return "fdatasync"
+	case 149:
+		return "_sysctl"
 	case 150:
 		return "mlock"
 	case 151:
@@ -150,34 +314,282 @@ func GetName(num int) string {
 		return "mlockall"
 	case 153:
 		return "munlockall"
+	case 154:
+		return "sched_setparam"
+	case 155:
+		return "sched_getparam"
+	case 156:
+		return "sched_setscheduler"
+	case 157:
+		return "sched_getscheduler"
+	case 158:
+		return "sched_yield"
+	case 159:
+		return "sched_get_priority_max"
+	case 160:
+		return "sched_get_priority_min"
+	case 161:
+		return "sched_rr_get_interval"
 	case 162:
 		return "nanosleep"
+	case 163:
+		return "mremap"
 	case 164:
 		return "setresuid"
+	case 165:
+		return "getresuid"
+	case 166:
+		return "vm86"
+	case 167:
+		return "query_module"
+	case 168:
+		return "poll"
+	case 169:
+		return "nfsservctl"
 	case 170:
 		return "setresgid"
+	case 171:
+		return "getresgid"
+	case 172:
+		return "prctl"
+	case 173:
+		return "rt_sigreturn"
+	case 174:
+		return "rt_sigaction"
+	case 175:
+		return "rt_sigprocmask"
+	case 176:
+		return "rt_sigpending"
+	case 177:
+		return "rt_sigtimedwait"
+	case 178:
+		return "rt_sigqueueinfo"
+	case 179:
+		return "rt_sigsuspend"
+	case 180:
+		return "pread64"
+	case 181:
+		return "pwrite64"
+	case 182:
+		return "chown"
 	case 183:
 		return "getcwd"
+	case 184:
+		return "capget"
+	case 185:
+		return "capset"
+	case 186:
+		return "sigaltstack"
 	case 187:
 		return "sendfile"
+	case 188:
+		return "getpmsg"
+	case 189:
+		return "putpmsg"
+	case 190:
+		return "vfork"
+	case 191:
+		return "ugetrlimit"
 	case 192:
 		return "mmap2"
+	case 193:
+		return "truncate64"
+	case 194:
+		return "ftruncate64"
+	case 195:
+		return "stat64"
+	case 196:
+		return "lstat64"
+	case 197:
+		return "fstat64"
+	case 198:
+		return "lchown32"
+	case 199:
+		return "getuid32"
+	case 200:
+		return "getgid32"
+	case 201:
+		return "geteuid32"
+	case 202:
+		return "getegid32"
+	case 203:
+		return "setreuid32"
+	case 204:
+		return "setregid32"
+	case 205:
+		return "getgroups32"
+	case 206:
+		return "setgroups32"
+	case 207:
+		return "fchown32"
+	case 208:
+		return "setresuid32"
+	case 209:
+		return "getresuid32"
+	case 210:
+		return "setresgid32"
+	case 211:
+		return "getresgid32"
+	case 212:
+		return "chown32"
+	case 213:
+		return "setuid32"
+	case 214:
+		return "setgid32"
+	case 215:
+		return "setfsuid32"
+	case 216:
+		return "setfsgid32"
+	case 217:
+		return "pivot_root"
+	case 218:
+		return "mincore"
 	case 219:
 		return "madvise"
+	case 220:
+		return "madvise1"
+	case 221:
+		return "getdents64"
+	case 222:
+		return "fcntl64"
 	case 223:
 		return "gettid"
+	case 224:
+		return "readahead"
 	case 225:
 		return "setxattr"
+	case 226:
+		return "lsetxattr"
+	case 227:
+		return "fsetxattr"
 	case 228:
 		return "getxattr"
+	case 229:
+		return "lgetxattr"
+	case 230:
+		return "fgetxattr"
 	case 231:
 		return "listxattr"
+	case 232:
+		return "llistxattr"
+	case 233:
+		return "flistxattr"
 	case 234:
 		return "removexattr"
+	case 235:
+		return "lremovexattr"
+	case 236:
+		return "fremovexattr"
+	case 237:
+		return "tkill"
+	case 238:
+		return "sendfile64"
+	case 239:
+		return "futex"
+	case 240:
+		return "sched_setaffinity"
+	case 241:
+		return "sched_getaffinity"
+	case 242:
+		return "set_thread_area"
+	case 243:
+		return "get_thread_area"
+	case 244:
+		return "io_setup"
+	case 245:
+		return "io_destroy"
+	case 246:
+		return "io_getevents"
+	case 247:
+		return "io_submit"
+	case 248:
+		return "io_cancel"
+	case 249:
+		return "fadvise64"
+	case 250:
+		return "exit_group"
+	case 251:
+		return "lookup_dcookie"
+	case 252:
+		return "epoll_create"
+	case 253:
+		return "epoll_ctl"
+	case 254:
+		return "epoll_wait"
+	case 255:
+		return "remap_file_pages"
+	case 256:
+		return "set_tid_address"
+	case 257:
+		return "timer_create"
+	case 258:
+		return "timer_settime"
+	case 259:
+		return "timer_gettime"
+	case 260:
+		return "timer_getoverrun"
+	case 261:
+		return "timer_delete"
+	case 262:
+		return "clock_settime"
+	case 263:
+		return "clock_gettime"
+	case 264:
+		return "clock_getres"
+	case 265:
+		return "clock_nanosleep"
+	case 266:
+		return "statfs64"
+	case 267:
+		return "fstatfs64"
 	case 268:
 		return "tgkill"
 	case 269:
 		return "utimes"
+	case 270:
+		return "fadvise64_64"
+	case 271:
+		return "vserver"
+	case 272:
+		return "mbind"
+	case 273:
+		return "get_mempolicy"
+	case 274:
+		return "set_mempolicy"
+	case 275:
+		return "mq_open"
+	case 276:
+		return "mq_unlink"
+	case 277:
+		return "mq_timedsend"
+	case 278:
+		return "mq_timedreceive"
+	case 279:
+		return "mq_notify"
+	case 280:
+		return "mq_getsetattr"
+	case 281:
+		return "kexec_load"
+	case 282:
+		return "waitid"
+	case 283:
+		return "add_key"
+	case 284:
+		return "request_key"
+	case 285:
+		return "keyctl"
+	case 286:
+		return "ioprio_set"
+	case 287:
+		return "ioprio_get"
+	case 288:
+		return "inotify_init"
+	case 289:
+		return "inotify_add_watch"
+	case 290:
+		return "inotify_rm_watch"
+	case 291:
+		return "migrate_pages"
 	case 292:
 		return "openat"
 	case 293:
@@ -188,6 +600,8 @@ func GetName(num int) string {
 		return "fchownat"
 	case 296:
 		return "futimesat"
+	case 297:
+		return "fstatat64"
 	case 298:
 		return "unlinkat"
 	case 299:
@@ -202,74 +616,198 @@ func GetName(num int) string {
 		return "fchmodat"
 	case 304:
 		return "faccessat"
+	case 305:
+		return "pselect6"
+	case 306:
+		return "ppoll"
 	case 307:
 		return "unshare"
+	case 308:
+		return "set_robust_list"
+	case 309:
+		return "get_robust_list"
 	case 310:
 		return "splice"
+	case 311:
+		return "sync_file_range"
 	case 312:
 		return "tee"
+	case 313:
+		return "vmsplice"
+	case 314:
+		return "move_pages"
+	case 315:
+		return "getcpu"
+	case 316:
+		return "epoll_pwait"
 	case 317:
 		return "utimensat"
+	case 318:
+		return "signalfd"
+	case 319:
+		return "timerfd_create"
+	case 320:
+		return "eventfd"
 	case 321:
 		return "fallocate"
+	case 322:
+		return "timerfd_settime"
+	case 323:
+		return "timerfd_gettime"
+	case 324:
+		return "signalfd4"
+	case 325:
+		return "eventfd2"
+	case 326:
+		return "epoll_create1"
 	case 327:
 		return "dup3"
 	case 328:
 		return "pipe2"
+	case 329:
+		return "inotify_init1"
+	case 330:
+		return "preadv"
+	case 331:
+		return "pwritev"
+	case 332:
+		return "rt_tgsigqueueinfo"
+	case 333:
+		return "perf_event_open"
+	case 334:
+		return "recvmmsg"
+	case 335:
+		return "fanotify_init"
+	case 336:
+		return "fanotify_mark"
+	case 337:
+		return "prlimit64"
 	}
 	return "unknown"
 }
 
 func GetNum(name string) int {
 	switch name {
+	case "restart_syscall":
+		return 0
 	case "exit":
 		return 1
+	case "fork":
+		return 2
 	case "read":
 		return 3
 	case "write":
 		return 4
+	case "open":
+		return 5
 	case "close":
 		return 6
+	case "waitpid":
+		return 7
+	case "creat":
+		return 8
+	case "link":
+		return 9
+	case "unlink":
+		return 10
+	case "execve":
+		return 11
 	case "chdir":
 		return 12
 	case "time":
 		return 13
+	case "mknod":
+		return 14
+	case "chmod":
+		return 15
 	case "lchown":
 		return 16
+	case "break":
+		return 17
+	case "oldstat":
+		return 18
+	case "lseek":
+		return 19
 	case "getpid":
 		return 20
 	case "mount":
 		return 21
+	case "umount":
+		return 22
+	case "setuid":
+		return 23
 	case "getuid":
 		return 24
+	case "stime":
+		return 25
 	case "ptrace":
 		return 26
+	case "alarm":
+		return 27
+	case "oldfstat":
+		return 28
 	case "pause":
 		return 29
 	case "utime":
 		return 30
+	case "stty":
+		return 31
+	case "gtty":
+		return 32
+	case "access":
+		return 33
+	case "nice":
+		return 34
+	case "ftime":
+		return 35
 	case "sync":
 		return 36
 	case "kill":
 		return 37
+	case "rename":
+		return 38
+	case "mkdir":
+		return 39
+	case "rmdir":
+		return 40
 	case "dup":
 		return 41
 	case "pipe":
 		return 42
 	case "times":
 		return 43
+	case "prof":
+		return 44
+	case "brk":
+		return 45
+	case "setgid":
+		return 46
 	case "getgid":
 		return 47
+	case "signal":
+		return 48
 	case "geteuid":
 		return 49
 	case "getegid":
 		return 50
 	case "acct":
 		return 51
+	case "umount2":
+		return 52
+	case "lock":
+		return 53
+	case "ioctl":
+		return 54
 	case "fcntl":
 		return 55
+	case "mpx":
+		return 56
 	case "setpgid":
 		return 57
+	case "ulimit":
+		return 58
+	case "oldolduname":
+		return 59
 	case "umask":
 		return 60
 	case "chroot":
@@ -280,12 +818,24 @@ func GetNum(name string) int {
 		return 63
 	case "getppid":
 		return 64
+	case "getpgrp":
+		return 65
 	case "setsid":
 		return 66
+	case "sigaction":
+		return 67
+	case "sgetmask":
+		return 68
+	case "ssetmask":
+		return 69
 	case "setreuid":
 		return 70
 	case "setregid":
 		return 71
+	case "sigsuspend":
+		return 72
+	case "sigpending":
+		return 73
 	case "sethostname":
 		return 74
 	case "setrlimit":
@@ -304,8 +854,22 @@ func GetNum(name string) int {
 		return 81
 	case "select":
 		return 82
+	case "symlink":
+		return 83
+	case "oldlstat":
+		return 84
+	case "readlink":
+		return 85
+	case "uselib":
+		return 86
+	case "swapon":
+		return 87
 	case "reboot":
 		return 88
+	case "readdir":
+		return 89
+	case "mmap":
+		return 90
 	case "munmap":
 		return 91
 	case "truncate":
@@ -320,44 +884,110 @@ func GetNum(name string) int {
 		return 96
 	case "setpriority":
 		return 97
+	case "profil":
+		return 98
+	case "statfs":
+		return 99
+	case "fstatfs":
+		return 100
 	case "ioperm":
 		return 101
+	case "socketcall":
+		return 102
+	case "syslog":
+		return 103
+	case "setitimer":
+		return 104
+	case "getitimer":
+		return 105
 	case "stat":
 		return 106
 	case "lstat":
 		return 107
 	case "fstat":
 		return 108
+	case "olduname":
+		return 109
 	case "iopl":
 		return 110
+	case "vhangup":
+		return 111
+	case "idle":
+		return 112
+	case "vm86old":
+		return 113
 	case "wait4":
 		return 114
+	case "swapoff":
+		return 115
 	case "sysinfo":
 		return 116
+	case "ipc":
+		return 117
 	case "fsync":
 		return 118
+	case "sigreturn":
+		return 119
+	case "clone":
+		return 120
 	case "setdomainname":
 		return 121
 	case "uname":
 		return 122
+	case "modify_ldt":
+		return 123
 	case "adjtimex":
 		return 124
 	case "mprotect":
 		return 125
+	case "sigprocmask":
+		return 126
+	case "create_module":
+		return 127
+	case "init_module":
+		return 128
+	case "delete_module":
+		return 129
+	case "get_kernel_syms":
+		return 130
+	case "quotactl":
+		return 131
 	case "getpgid":
 		return 132
 	case "fchdir":
 		return 133
+	case "bdflush":
+		return 134
+	case "sysfs":
+		return 135
+	case "personality":
+		return 136
+	case "afs_syscall":
+		return 137
 	case "setfsuid":
 		return 138
 	case "setfsgid":
 		return 139
+	case "_llseek":
+		return 140
 	case "getdents":
 		return 141
+	case "_newselect":
+		return 142
 	case "flock":
 		return 143
+	case "msync":
+		return 144
+	case "readv":
+		return 145
+	case "writev":
+		return 146
+	case "getsid":
+		return 147
 	case "fdatasync":
 		return 148
+	case "_sysctl":
+		return 149
 	case "mlock":
 		return 150
 	case "munlock":
@@ -366,34 +996,282 @@ func GetNum(name string) int {
 		return 152
 	case "munlockall":
 		return 153
+	case "sched_setparam":
+		return 154
+	case "sched_getparam":
+		return 155
+	case "sched_setscheduler":
+		return 156
+	case "sched_getscheduler":
+		return 157
+	case "sched_yield":
+		return 158
+	case "sched_get_priority_max":
+		return 159
+	case "sched_get_priority_min":
+		return 160
+	case "sched_rr_get_interval":
+		return 161
 	case "nanosleep":
 		return 162
+	case "mremap":
+		return 163
 	case "setresuid":
 		return 164
+	case "getresuid":
+		return 165
+	case "vm86":
+		return 166
+	case "query_module":
+		return 167
+	case "poll":
+		return 168
+	case "nfsservctl":
+		return 169
 	case "setresgid":
 		return 170
+	case "getresgid":
+		return 171
+	case "prctl":
+		return 172
+	case "rt_sigreturn":
+		return 173
+	case "rt_sigaction":
+		return 174
+	case "rt_sigprocmask":
+		return 175
+	case "rt_sigpending":
+		return 176
+	case "rt_sigtimedwait":
+		return 177
+	case "rt_sigqueueinfo":
+		return 178
+	case "rt_sigsuspend":
+		return 179
+	case "pread64":
+		return 180
+	case "pwrite64":
+		return 181
+	case "chown":
+		return 182
 	case "getcwd":
 		return 183
+	case "capget":
+		return 184
+	case "capset":
+		return 185
+	case "sigaltstack":
+		return 186
 	case "sendfile":
 		return 187
+	case "getpmsg":
+		return 188
+	case "putpmsg":
+		return 189
+	case "vfork":
+		return 190
+	case "ugetrlimit":
+		return 191
 	case "mmap2":
 		return 192
+	case "truncate64":
+		return 193
+	case "ftruncate64":
+		return 194
+	case "stat64":
+		return 195
+	case "lstat64":
+		return 196
+	case "fstat64":
+		return 197
+	case "lchown32":
+		return 198
+	case "getuid32":
+		return 199
+	case "getgid32":
+		return 200
+	case "geteuid32":
+		return 201
+	case "getegid32":
+		return 202
+	case "setreuid32":
+		return 203
+	case "setregid32":
+		return 204
+	case "getgroups32":
+		return 205
+	case "setgroups32":
+		return 206
+	case "fchown32":
+		return 207
+	case "setresuid32":
+		return 208
+	case "getresuid32":
+		return 209
+	case "setresgid32":
+		return 210
+	case "getresgid32":
+		return 211
+	case "chown32":
+		return 212
+	case "setuid32":
+		return 213
+	case "setgid32":
+		return 214
+	case "setfsuid32":
+		return 215
+	case "setfsgid32":
+		return 216
+	case "pivot_root":
+		return 217
+	case "mincore":
+		return 218
 	case "madvise":
 		return 219
+	case "madvise1":
+		return 220
+	case "getdents64":
+		return 221
+	case "fcntl64":
+		return 222
 	case "gettid":
 		return 223
+	case "readahead":
+		return 224
 	case "setxattr":
 		return 225
+	case "lsetxattr":
+		return 226
+	case "fsetxattr":
+		return 227
 	case "getxattr":
 		return 228
+	case "lgetxattr":
+		return 229
+	case "fgetxattr":
+		return 230
 	case "listxattr":
 		return 231
+	case "llistxattr":
+		return 232
+	case "flistxattr":
+		return 233
 	case "removexattr":
 		return 234
+	case "lremovexattr":
+		return 235
+	case "fremovexattr":
+		return 236
+	case "tkill":
+		return 237
+	case "sendfile64":
+		return 238
+	case "futex":
+		return 239
+	case "sched_setaffinity":
+		return 240
+	case "sched_getaffinity":
+		return 241
+	case "set_thread_area":
+		return 242
+	case "get_thread_area":
+		return 243
+	case "io_setup":
+		return 244
+	case "io_destroy":
+		return 245
+	case "io_getevents":
+		return 246
+	case "io_submit":
+		return 247
+	case "io_cancel":
+		return 248
+	case "fadvise64":
+		return 249
+	case "exit_group":
+		return 250
+	case "lookup_dcookie":
+		return 251
+	case "epoll_create":
+		return 252
+	case "epoll_ctl":
+		return 253
+	case "epoll_wait":
+		return 254
+	case "remap_file_pages":
+		return 255
+	case "set_tid_address":
+		return 256
+	case "timer_create":
+		return 257
+	case "timer_settime":
+		return 258
+	case "timer_gettime":
+		return 259
+	case "timer_getoverrun":
+		return 260
+	case "timer_delete":
+		return 261
+	case "clock_settime":
+		return 262
+	case "clock_gettime":
+		return 263
+	case "clock_getres":
+		return 264
+	case "clock_nanosleep":
+		return 265
+	case "statfs64":
+		return 266
+	case "fstatfs64":
+		return 267
 	case "tgkill":
 		return 268
 	case "utimes":
 		return 269
+	case "fadvise64_64":
+		return 270
+	case "vserver":
+		return 271
+	case "mbind":
+		return 272
+	case "get_mempolicy":
+		return 273
+	case "set_mempolicy":
+		return 274
+	case "mq_open":
+		return 275
+	case "mq_unlink":
+		return 276
+	case "mq_timedsend":
+		return 277
+	case "mq_timedreceive":
+		return 278
+	case "mq_notify":
+		return 279
+	case "mq_getsetattr":
+		return 280
+	case "kexec_load":
+		return 281
+	case "waitid":
+		return 282
+	case "add_key":
+		return 283
+	case "request_key":
+		return 284
+	case "keyctl":
+		return 285
+	case "ioprio_set":
+		return 286
+	case "ioprio_get":
+		return 287
+	case "inotify_init":
+		return 288
+	case "inotify_add_watch":
+		return 289
+	case "inotify_rm_watch":
+		return 290
+	case "migrate_pages":
+		return 291
 	case "openat":
 		return 292
 	case "mkdirat":
@@ -404,6 +1282,8 @@ func GetNum(name string) int {
 		return 295
 	case "futimesat":
 		return 296
+	case "fstatat64":
+		return 297
 	case "unlinkat":
 		return 298
 	case "renameat":
@@ -418,63 +1298,175 @@ func GetNum(name string) int {
 		return 303
 	case "faccessat":
 		return 304
+	case "pselect6":
+		return 305
+	case "ppoll":
+		return 306
 	case "unshare":
 		return 307
+	case "set_robust_list":
+		return 308
+	case "get_robust_list":
+		return 309
 	case "splice":
 		return 310
+	case "sync_file_range":
+		return 311
 	case "tee":
 		return 312
+	case "vmsplice":
+		return 313
+	case "move_pages":
+		return 314
+	case "getcpu":
+		return 315
+	case "epoll_pwait":
+		return 316
 	case "utimensat":
 		return 317
+	case "signalfd":
+		return 318
+	case "timerfd_create":
+		return 319
+	case "eventfd":
+		return 320
 	case "fallocate":
 		return 321
+	case "timerfd_settime":
+		return 322
+	case "timerfd_gettime":
+		return 323
+	case "signalfd4":
+		return 324
+	case "eventfd2":
+		return 325
+	case "epoll_create1":
+		return 326
 	case "dup3":
 		return 327
 	case "pipe2":
 		return 328
+	case "inotify_init1":
+		return 329
+	case "preadv":
+		return 330
+	case "pwritev":
+		return 331
+	case "rt_tgsigqueueinfo":
+		return 332
+	case "perf_event_open":
+		return 333
+	case "recvmmsg":
+		return 334
+	case "fanotify_init":
+		return 335
+	case "fanotify_mark":
+		return 336
+	case "prlimit64":
+		return 337
 	}
 	return -1
 }
 
 func GetArgsTypes(name string) []ArgType {
 	switch name {
+	case "restart_syscall":
+		return []ArgType(nil)
 	case "exit":
 		return []ArgType{ARG_INT}
+	case "fork":
+		return []ArgType(nil)
 	case "read":
 		return []ArgType{ARG_INT, ARG_PTR}
 	case "write":
 		return []ArgType{ARG_INT, ARG_PTR}
+	case "open":
+		return []ArgType{ARG_STR, ARG_INT, ARG_INT}
 	case "close":
 		return []ArgType{ARG_INT}
+	case "waitpid":
+		return []ArgType(nil)
+	case "creat":
+		return []ArgType{ARG_STR, ARG_INT}
+	case "link":
+		return []ArgType{ARG_STR, ARG_STR}
+	case "unlink":
+		return []ArgType{ARG_STR}
+	case "execve":
+		return []ArgType(nil)
 	case "chdir":
 		return []ArgType{ARG_STR}
 	case "time":
 		return []ArgType{ARG_PTR}
+	case "mknod":
+		return []ArgType{ARG_STR, ARG_INT, ARG_INT}
+	case "chmod":
+		return []ArgType{ARG_STR, ARG_INT}
 	case "lchown":
 		return []ArgType{ARG_STR, ARG_INT, ARG_INT}
+	case "break":
+		return []ArgType(nil)
+	case "oldstat":
+		return []ArgType(nil)
+	case "lseek":
+		return []ArgType(nil)
 	case "getpid":
 		return []ArgType(nil)
 	case "mount":
 		return []ArgType{ARG_STR, ARG_STR, ARG_STR, ARG_INT, ARG_PTR}
+	case "umount":
+		return []ArgType(nil)
+	case "setuid":
+		return []ArgType{ARG_INT}
 	case "getuid":
+		return []ArgType(nil)
+	case "stime":
 		return []ArgType(nil)
 	case "ptrace":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT, ARG_INT}
+	case "alarm":
+		return []ArgType(nil)
+	case "oldfstat":
+		return []ArgType(nil)
 	case "pause":
 		return []ArgType(nil)
 	case "utime":
 		return []ArgType{ARG_STR, ARG_PTR}
+	case "stty":
+		return []ArgType(nil)
+	case "gtty":
+		return []ArgType(nil)
+	case "access":
+		return []ArgType{ARG_STR, ARG_INT}
+	case "nice":
+		return []ArgType(nil)
+	case "ftime":
+		return []ArgType(nil)
 	case "sync":
 		return []ArgType(nil)
 	case "kill":
 		return []ArgType{ARG_INT, ARG_PTR}
+	case "rename":
+		return []ArgType{ARG_STR, ARG_STR}
+	case "mkdir":
+		return []ArgType{ARG_STR, ARG_INT}
+	case "rmdir":
+		return []ArgType{ARG_STR}
 	case "dup":
 		return []ArgType{ARG_INT}
 	case "pipe":
 		return []ArgType{ARG_PTR}
 	case "times":
 		return []ArgType{ARG_PTR}
+	case "prof":
+		return []ArgType(nil)
+	case "brk":
+		return []ArgType(nil)
+	case "setgid":
+		return []ArgType{ARG_INT}
 	case "getgid":
+		return []ArgType(nil)
+	case "signal":
 		return []ArgType(nil)
 	case "geteuid":
 		return []ArgType(nil)
@@ -482,10 +1474,22 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType(nil)
 	case "acct":
 		return []ArgType{ARG_STR}
+	case "umount2":
+		return []ArgType(nil)
+	case "lock":
+		return []ArgType(nil)
+	case "ioctl":
+		return []ArgType(nil)
 	case "fcntl":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT}
+	case "mpx":
+		return []ArgType(nil)
 	case "setpgid":
 		return []ArgType{ARG_INT, ARG_INT}
+	case "ulimit":
+		return []ArgType(nil)
+	case "oldolduname":
+		return []ArgType(nil)
 	case "umask":
 		return []ArgType{ARG_INT}
 	case "chroot":
@@ -496,12 +1500,24 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType{ARG_INT, ARG_INT}
 	case "getppid":
 		return []ArgType(nil)
+	case "getpgrp":
+		return []ArgType(nil)
 	case "setsid":
+		return []ArgType(nil)
+	case "sigaction":
+		return []ArgType(nil)
+	case "sgetmask":
+		return []ArgType(nil)
+	case "ssetmask":
 		return []ArgType(nil)
 	case "setreuid":
 		return []ArgType{ARG_INT, ARG_INT}
 	case "setregid":
 		return []ArgType{ARG_INT, ARG_INT}
+	case "sigsuspend":
+		return []ArgType(nil)
+	case "sigpending":
+		return []ArgType(nil)
 	case "sethostname":
 		return []ArgType{ARG_PTR}
 	case "setrlimit":
@@ -520,8 +1536,22 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType{ARG_INT, ARG_PTR}
 	case "select":
 		return []ArgType{ARG_INT, ARG_PTR, ARG_PTR, ARG_PTR, ARG_PTR}
+	case "symlink":
+		return []ArgType{ARG_STR, ARG_STR}
+	case "oldlstat":
+		return []ArgType(nil)
+	case "readlink":
+		return []ArgType{ARG_STR, ARG_PTR}
+	case "uselib":
+		return []ArgType(nil)
+	case "swapon":
+		return []ArgType(nil)
 	case "reboot":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT, ARG_STR}
+	case "readdir":
+		return []ArgType(nil)
+	case "mmap":
+		return []ArgType{ARG_INT, ARG_PTR, ARG_INT, ARG_INT, ARG_INT}
 	case "munmap":
 		return []ArgType{ARG_INT, ARG_INT}
 	case "truncate":
@@ -536,44 +1566,110 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType{ARG_INT, ARG_INT}
 	case "setpriority":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT}
+	case "profil":
+		return []ArgType(nil)
+	case "statfs":
+		return []ArgType(nil)
+	case "fstatfs":
+		return []ArgType(nil)
 	case "ioperm":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT}
+	case "socketcall":
+		return []ArgType(nil)
+	case "syslog":
+		return []ArgType(nil)
+	case "setitimer":
+		return []ArgType(nil)
+	case "getitimer":
+		return []ArgType(nil)
 	case "stat":
 		return []ArgType{ARG_STR, ARG_PTR}
 	case "lstat":
 		return []ArgType{ARG_STR, ARG_PTR}
 	case "fstat":
 		return []ArgType{ARG_INT, ARG_PTR}
+	case "olduname":
+		return []ArgType(nil)
 	case "iopl":
 		return []ArgType{ARG_INT}
+	case "vhangup":
+		return []ArgType(nil)
+	case "idle":
+		return []ArgType(nil)
+	case "vm86old":
+		return []ArgType(nil)
 	case "wait4":
 		return []ArgType{ARG_INT, ARG_PTR, ARG_INT, ARG_PTR}
+	case "swapoff":
+		return []ArgType(nil)
 	case "sysinfo":
 		return []ArgType{ARG_PTR}
+	case "ipc":
+		return []ArgType(nil)
 	case "fsync":
 		return []ArgType{ARG_INT}
+	case "sigreturn":
+		return []ArgType(nil)
+	case "clone":
+		return []ArgType(nil)
 	case "setdomainname":
 		return []ArgType{ARG_PTR}
 	case "uname":
 		return []ArgType{ARG_PTR}
+	case "modify_ldt":
+		return []ArgType(nil)
 	case "adjtimex":
 		return []ArgType{ARG_PTR}
 	case "mprotect":
 		return []ArgType{ARG_PTR, ARG_INT}
+	case "sigprocmask":
+		return []ArgType(nil)
+	case "create_module":
+		return []ArgType(nil)
+	case "init_module":
+		return []ArgType(nil)
+	case "delete_module":
+		return []ArgType(nil)
+	case "get_kernel_syms":
+		return []ArgType(nil)
+	case "quotactl":
+		return []ArgType(nil)
 	case "getpgid":
 		return []ArgType{ARG_INT}
 	case "fchdir":
 		return []ArgType{ARG_INT}
+	case "bdflush":
+		return []ArgType(nil)
+	case "sysfs":
+		return []ArgType(nil)
+	case "personality":
+		return []ArgType(nil)
+	case "afs_syscall":
+		return []ArgType(nil)
 	case "setfsuid":
 		return []ArgType{ARG_INT}
 	case "setfsgid":
 		return []ArgType{ARG_INT}
+	case "_llseek":
+		return []ArgType(nil)
 	case "getdents":
 		return []ArgType{ARG_INT, ARG_PTR}
+	case "_newselect":
+		return []ArgType(nil)
 	case "flock":
 		return []ArgType{ARG_INT, ARG_INT}
+	case "msync":
+		return []ArgType(nil)
+	case "readv":
+		return []ArgType(nil)
+	case "writev":
+		return []ArgType(nil)
+	case "getsid":
+		return []ArgType(nil)
 	case "fdatasync":
 		return []ArgType{ARG_INT}
+	case "_sysctl":
+		return []ArgType(nil)
 	case "mlock":
 		return []ArgType{ARG_PTR}
 	case "munlock":
@@ -582,34 +1678,282 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType{ARG_INT}
 	case "munlockall":
 		return []ArgType(nil)
+	case "sched_setparam":
+		return []ArgType(nil)
+	case "sched_getparam":
+		return []ArgType(nil)
+	case "sched_setscheduler":
+		return []ArgType(nil)
+	case "sched_getscheduler":
+		return []ArgType(nil)
+	case "sched_yield":
+		return []ArgType(nil)
+	case "sched_get_priority_max":
+		return []ArgType(nil)
+	case "sched_get_priority_min":
+		return []ArgType(nil)
+	case "sched_rr_get_interval":
+		return []ArgType(nil)
 	case "nanosleep":
 		return []ArgType{ARG_PTR, ARG_PTR}
+	case "mremap":
+		return []ArgType(nil)
 	case "setresuid":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT}
+	case "getresuid":
+		return []ArgType(nil)
+	case "vm86":
+		return []ArgType(nil)
+	case "query_module":
+		return []ArgType(nil)
+	case "poll":
+		return []ArgType(nil)
+	case "nfsservctl":
+		return []ArgType(nil)
 	case "setresgid":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT}
+	case "getresgid":
+		return []ArgType(nil)
+	case "prctl":
+		return []ArgType(nil)
+	case "rt_sigreturn":
+		return []ArgType(nil)
+	case "rt_sigaction":
+		return []ArgType(nil)
+	case "rt_sigprocmask":
+		return []ArgType(nil)
+	case "rt_sigpending":
+		return []ArgType(nil)
+	case "rt_sigtimedwait":
+		return []ArgType(nil)
+	case "rt_sigqueueinfo":
+		return []ArgType(nil)
+	case "rt_sigsuspend":
+		return []ArgType(nil)
+	case "pread64":
+		return []ArgType(nil)
+	case "pwrite64":
+		return []ArgType(nil)
+	case "chown":
+		return []ArgType{ARG_STR, ARG_INT, ARG_INT}
 	case "getcwd":
 		return []ArgType{ARG_PTR}
+	case "capget":
+		return []ArgType(nil)
+	case "capset":
+		return []ArgType(nil)
+	case "sigaltstack":
+		return []ArgType(nil)
 	case "sendfile":
 		return []ArgType{ARG_INT, ARG_INT, ARG_PTR, ARG_INT}
+	case "getpmsg":
+		return []ArgType(nil)
+	case "putpmsg":
+		return []ArgType(nil)
+	case "vfork":
+		return []ArgType(nil)
+	case "ugetrlimit":
+		return []ArgType(nil)
 	case "mmap2":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT, ARG_INT, ARG_INT, ARG_INT}
+	case "truncate64":
+		return []ArgType(nil)
+	case "ftruncate64":
+		return []ArgType(nil)
+	case "stat64":
+		return []ArgType(nil)
+	case "lstat64":
+		return []ArgType(nil)
+	case "fstat64":
+		return []ArgType(nil)
+	case "lchown32":
+		return []ArgType(nil)
+	case "getuid32":
+		return []ArgType(nil)
+	case "getgid32":
+		return []ArgType(nil)
+	case "geteuid32":
+		return []ArgType(nil)
+	case "getegid32":
+		return []ArgType(nil)
+	case "setreuid32":
+		return []ArgType(nil)
+	case "setregid32":
+		return []ArgType(nil)
+	case "getgroups32":
+		return []ArgType(nil)
+	case "setgroups32":
+		return []ArgType(nil)
+	case "fchown32":
+		return []ArgType(nil)
+	case "setresuid32":
+		return []ArgType(nil)
+	case "getresuid32":
+		return []ArgType(nil)
+	case "setresgid32":
+		return []ArgType(nil)
+	case "getresgid32":
+		return []ArgType(nil)
+	case "chown32":
+		return []ArgType(nil)
+	case "setuid32":
+		return []ArgType(nil)
+	case "setgid32":
+		return []ArgType(nil)
+	case "setfsuid32":
+		return []ArgType(nil)
+	case "setfsgid32":
+		return []ArgType(nil)
+	case "pivot_root":
+		return []ArgType(nil)
+	case "mincore":
+		return []ArgType(nil)
 	case "madvise":
 		return []ArgType{ARG_PTR, ARG_INT}
+	case "madvise1":
+		return []ArgType(nil)
+	case "getdents64":
+		return []ArgType(nil)
+	case "fcntl64":
+		return []ArgType(nil)
 	case "gettid":
+		return []ArgType(nil)
+	case "readahead":
 		return []ArgType(nil)
 	case "setxattr":
 		return []ArgType{ARG_STR, ARG_STR, ARG_PTR, ARG_INT}
+	case "lsetxattr":
+		return []ArgType(nil)
+	case "fsetxattr":
+		return []ArgType(nil)
 	case "getxattr":
 		return []ArgType{ARG_STR, ARG_STR, ARG_PTR}
+	case "lgetxattr":
+		return []ArgType(nil)
+	case "fgetxattr":
+		return []ArgType(nil)
 	case "listxattr":
 		return []ArgType{ARG_STR, ARG_PTR}
+	case "llistxattr":
+		return []ArgType(nil)
+	case "flistxattr":
+		return []ArgType(nil)
 	case "removexattr":
 		return []ArgType{ARG_STR, ARG_STR}
+	case "lremovexattr":
+		return []ArgType(nil)
+	case "fremovexattr":
+		return []ArgType(nil)
+	case "tkill":
+		return []ArgType(nil)
+	case "sendfile64":
+		return []ArgType(nil)
+	case "futex":
+		return []ArgType(nil)
+	case "sched_setaffinity":
+		return []ArgType(nil)
+	case "sched_getaffinity":
+		return []ArgType(nil)
+	case "set_thread_area":
+		return []ArgType(nil)
+	case "get_thread_area":
+		return []ArgType(nil)
+	case "io_setup":
+		return []ArgType(nil)
+	case "io_destroy":
+		return []ArgType(nil)
+	case "io_getevents":
+		return []ArgType(nil)
+	case "io_submit":
+		return []ArgType(nil)
+	case "io_cancel":
+		return []ArgType(nil)
+	case "fadvise64":
+		return []ArgType(nil)
+	case "exit_group":
+		return []ArgType(nil)
+	case "lookup_dcookie":
+		return []ArgType(nil)
+	case "epoll_create":
+		return []ArgType(nil)
+	case "epoll_ctl":
+		return []ArgType(nil)
+	case "epoll_wait":
+		return []ArgType(nil)
+	case "remap_file_pages":
+		return []ArgType(nil)
+	case "set_tid_address":
+		return []ArgType(nil)
+	case "timer_create":
+		return []ArgType(nil)
+	case "timer_settime":
+		return []ArgType(nil)
+	case "timer_gettime":
+		return []ArgType(nil)
+	case "timer_getoverrun":
+		return []ArgType(nil)
+	case "timer_delete":
+		return []ArgType(nil)
+	case "clock_settime":
+		return []ArgType(nil)
+	case "clock_gettime":
+		return []ArgType(nil)
+	case "clock_getres":
+		return []ArgType(nil)
+	case "clock_nanosleep":
+		return []ArgType(nil)
+	case "statfs64":
+		return []ArgType(nil)
+	case "fstatfs64":
+		return []ArgType(nil)
 	case "tgkill":
 		return []ArgType{ARG_INT, ARG_INT, ARG_PTR}
 	case "utimes":
 		return []ArgType{ARG_STR, ARG_PTR}
+	case "fadvise64_64":
+		return []ArgType(nil)
+	case "vserver":
+		return []ArgType(nil)
+	case "mbind":
+		return []ArgType(nil)
+	case "get_mempolicy":
+		return []ArgType(nil)
+	case "set_mempolicy":
+		return []ArgType(nil)
+	case "mq_open":
+		return []ArgType(nil)
+	case "mq_unlink":
+		return []ArgType(nil)
+	case "mq_timedsend":
+		return []ArgType(nil)
+	case "mq_timedreceive":
+		return []ArgType(nil)
+	case "mq_notify":
+		return []ArgType(nil)
+	case "mq_getsetattr":
+		return []ArgType(nil)
+	case "kexec_load":
+		return []ArgType(nil)
+	case "waitid":
+		return []ArgType(nil)
+	case "add_key":
+		return []ArgType(nil)
+	case "request_key":
+		return []ArgType(nil)
+	case "keyctl":
+		return []ArgType(nil)
+	case "ioprio_set":
+		return []ArgType(nil)
+	case "ioprio_get":
+		return []ArgType(nil)
+	case "inotify_init":
+		return []ArgType(nil)
+	case "inotify_add_watch":
+		return []ArgType(nil)
+	case "inotify_rm_watch":
+		return []ArgType(nil)
+	case "migrate_pages":
+		return []ArgType(nil)
 	case "openat":
 		return []ArgType{ARG_INT, ARG_STR, ARG_INT, ARG_INT}
 	case "mkdirat":
@@ -620,6 +1964,8 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType{ARG_INT, ARG_STR, ARG_INT, ARG_INT, ARG_INT}
 	case "futimesat":
 		return []ArgType{ARG_INT, ARG_PTR, ARG_PTR}
+	case "fstatat64":
+		return []ArgType(nil)
 	case "unlinkat":
 		return []ArgType{ARG_INT, ARG_STR, ARG_INT}
 	case "renameat":
@@ -634,20 +1980,72 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType{ARG_INT, ARG_STR, ARG_INT, ARG_INT}
 	case "faccessat":
 		return []ArgType{ARG_INT, ARG_STR, ARG_INT, ARG_INT}
+	case "pselect6":
+		return []ArgType(nil)
+	case "ppoll":
+		return []ArgType(nil)
 	case "unshare":
 		return []ArgType{ARG_INT}
+	case "set_robust_list":
+		return []ArgType(nil)
+	case "get_robust_list":
+		return []ArgType(nil)
 	case "splice":
 		return []ArgType{ARG_INT, ARG_PTR, ARG_INT, ARG_PTR, ARG_INT, ARG_INT}
+	case "sync_file_range":
+		return []ArgType(nil)
 	case "tee":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT, ARG_INT}
+	case "vmsplice":
+		return []ArgType(nil)
+	case "move_pages":
+		return []ArgType(nil)
+	case "getcpu":
+		return []ArgType(nil)
+	case "epoll_pwait":
+		return []ArgType(nil)
 	case "utimensat":
 		return []ArgType{ARG_INT, ARG_STR, ARG_PTR}
+	case "signalfd":
+		return []ArgType(nil)
+	case "timerfd_create":
+		return []ArgType(nil)
+	case "eventfd":
+		return []ArgType(nil)
 	case "fallocate":
 		return []ArgType{ARG_INT, ARG_INT, ARG_PTR, ARG_PTR}
+	case "timerfd_settime":
+		return []ArgType(nil)
+	case "timerfd_gettime":
+		return []ArgType(nil)
+	case "signalfd4":
+		return []ArgType(nil)
+	case "eventfd2":
+		return []ArgType(nil)
+	case "epoll_create1":
+		return []ArgType(nil)
 	case "dup3":
 		return []ArgType{ARG_INT, ARG_INT, ARG_INT}
 	case "pipe2":
 		return []ArgType{ARG_PTR, ARG_INT}
+	case "inotify_init1":
+		return []ArgType(nil)
+	case "preadv":
+		return []ArgType(nil)
+	case "pwritev":
+		return []ArgType(nil)
+	case "rt_tgsigqueueinfo":
+		return []ArgType(nil)
+	case "perf_event_open":
+		return []ArgType(nil)
+	case "recvmmsg":
+		return []ArgType(nil)
+	case "fanotify_init":
+		return []ArgType(nil)
+	case "fanotify_mark":
+		return []ArgType(nil)
+	case "prlimit64":
+		return []ArgType(nil)
 	}
 	return nil
 }

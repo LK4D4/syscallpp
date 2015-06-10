@@ -36,9 +36,10 @@ var osArches = map[string][]string{
 }
 
 var (
-	numFileName  = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsysnum_%s_%s.go")
-	funcFileName = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsyscall_%s_%s.go")
-	outFileName  = "syscallpp_%s_%s.go"
+	numFileName      = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsysnum_%s_%s.go")
+	funcOSFileName   = filepath.Join(os.Getenv("GOROOT"), "src/syscall/syscall_%s.go")
+	funcArchFileName = filepath.Join(os.Getenv("GOROOT"), "src/syscall/zsyscall_%s_%s.go")
+	outFileName      = "syscallpp_%s_%s.go"
 )
 
 type sc struct {
@@ -107,10 +108,9 @@ func (g *generator) writeGetArgsTypesFunc() {
 	g.buf.WriteString("}\n")
 }
 
-func parseFuncs(OS, arch string) (map[string][]string, error) {
-	funcFile := fmt.Sprintf(funcFileName, OS, arch)
+func parseFuncsFromFile(path string) (map[string][]string, error) {
 	fs := token.NewFileSet()
-	parsedFile, err := parser.ParseFile(fs, funcFile, nil, 0)
+	parsedFile, err := parser.ParseFile(fs, path, nil, 0)
 	if err != nil {
 		return nil, err
 	}
@@ -143,6 +143,25 @@ func parseFuncs(OS, arch string) (map[string][]string, error) {
 		funcs[name] = ps
 	}
 	return funcs, nil
+
+}
+
+func parseFuncs(OS, arch string) (map[string][]string, error) {
+	funcOSFile := fmt.Sprintf(funcOSFileName, OS)
+	funcArchFile := fmt.Sprintf(funcArchFileName, OS, arch)
+	common, err := parseFuncsFromFile(funcOSFile)
+	if err != nil {
+		return nil, err
+	}
+	archSpec, err := parseFuncsFromFile(funcArchFile)
+	if err != nil {
+		return nil, err
+	}
+	// don't care about duplicates
+	for f, args := range archSpec {
+		common[f] = args
+	}
+	return common, nil
 }
 
 func parseSyscalls(OS, arch string) ([]sc, error) {
@@ -171,15 +190,15 @@ func parseSyscalls(OS, arch string) ([]sc, error) {
 					return nil, fmt.Errorf("Unexpected type of constant %T", number)
 				}
 				name := strings.ToLower(name[4:])
-				args, ok := funcs[name]
-				if !ok {
-					continue
+				s := sc{
+					name:   name,
+					number: number,
 				}
-				syscalls = append(syscalls, sc{
-					name:      name,
-					number:    number,
-					argsTypes: args,
-				})
+				args, ok := funcs[name]
+				if ok {
+					s.argsTypes = args
+				}
+				syscalls = append(syscalls, s)
 			}
 		}
 	}

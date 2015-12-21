@@ -33,6 +33,11 @@ var osArches = map[string][]string{
 		"amd64",
 		"arm",
 	},
+	"openbsd": {
+		"386",
+		"amd64",
+		"arm",
+	},
 }
 
 var (

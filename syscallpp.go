@@ -1,6 +1,6 @@
 package syscallpp
 
-//go:generate go run ppgen/gen.go
+//go:generate go run ppgen/gen.go ppgen/genlinux.go
 
 type ArgType uint
 

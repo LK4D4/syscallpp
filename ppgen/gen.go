@@ -181,30 +181,40 @@ func parseSyscalls(OS, arch string) ([]sc, error) {
 		return nil, err
 	}
 	var syscalls []sc
-	for _, decl := range parsedFile.Decls {
-		decl, ok := decl.(*ast.GenDecl)
-		if !ok || decl.Tok != token.CONST {
-			continue
+	if OS == "linux" && (arch == "amd64" || arch == "386" || arch == "ppc64") {
+		scs, err := parseLinuxNumbers(arch)
+		if err != nil {
+			return nil, err
 		}
-		for _, spec := range decl.Specs {
-			vspec := spec.(*ast.ValueSpec)
-			name := vspec.Names[0].Name
-			if strings.HasPrefix(name, "SYS_") {
-				number, ok := vspec.Names[0].Obj.Data.(int)
-				if !ok {
-					return nil, fmt.Errorf("Unexpected type of constant %T", number)
-				}
-				name := strings.ToLower(name[4:])
-				s := sc{
-					name:   name,
-					number: number,
-				}
-				args, ok := funcs[name]
-				if ok {
-					s.argsTypes = args
-				}
-				syscalls = append(syscalls, s)
+		syscalls = scs
+	} else {
+		for _, decl := range parsedFile.Decls {
+			decl, ok := decl.(*ast.GenDecl)
+			if !ok || decl.Tok != token.CONST {
+				continue
 			}
+			for _, spec := range decl.Specs {
+				vspec := spec.(*ast.ValueSpec)
+				name := vspec.Names[0].Name
+				if strings.HasPrefix(name, "SYS_") {
+					number, ok := vspec.Names[0].Obj.Data.(int)
+					if !ok {
+						return nil, fmt.Errorf("Unexpected type of constant %T", number)
+					}
+					name := strings.ToLower(name[4:])
+					s := sc{
+						name:   name,
+						number: number,
+					}
+					syscalls = append(syscalls, s)
+				}
+			}
+		}
+	}
+	for i := range syscalls {
+		args, ok := funcs[syscalls[i].name]
+		if ok {
+			syscalls[i].argsTypes = args
 		}
 	}
 	return syscalls, nil

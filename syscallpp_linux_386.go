@@ -447,241 +447,309 @@ func GetName(num int) string {
 	case 219:
 		return "madvise"
 	case 220:
-		return "madvise1"
-	case 221:
 		return "getdents64"
-	case 222:
+	case 221:
 		return "fcntl64"
-	case 223:
-		return "gettid"
 	case 224:
-		return "readahead"
+		return "gettid"
 	case 225:
-		return "setxattr"
+		return "readahead"
 	case 226:
-		return "lsetxattr"
+		return "setxattr"
 	case 227:
-		return "fsetxattr"
+		return "lsetxattr"
 	case 228:
-		return "getxattr"
+		return "fsetxattr"
 	case 229:
-		return "lgetxattr"
+		return "getxattr"
 	case 230:
-		return "fgetxattr"
+		return "lgetxattr"
 	case 231:
-		return "listxattr"
+		return "fgetxattr"
 	case 232:
-		return "llistxattr"
+		return "listxattr"
 	case 233:
-		return "flistxattr"
+		return "llistxattr"
 	case 234:
-		return "removexattr"
+		return "flistxattr"
 	case 235:
-		return "lremovexattr"
+		return "removexattr"
 	case 236:
-		return "fremovexattr"
+		return "lremovexattr"
 	case 237:
-		return "tkill"
+		return "fremovexattr"
 	case 238:
-		return "sendfile64"
+		return "tkill"
 	case 239:
-		return "futex"
+		return "sendfile64"
 	case 240:
-		return "sched_setaffinity"
+		return "futex"
 	case 241:
-		return "sched_getaffinity"
+		return "sched_setaffinity"
 	case 242:
-		return "set_thread_area"
+		return "sched_getaffinity"
 	case 243:
-		return "get_thread_area"
+		return "set_thread_area"
 	case 244:
-		return "io_setup"
+		return "get_thread_area"
 	case 245:
-		return "io_destroy"
+		return "io_setup"
 	case 246:
-		return "io_getevents"
+		return "io_destroy"
 	case 247:
-		return "io_submit"
+		return "io_getevents"
 	case 248:
-		return "io_cancel"
+		return "io_submit"
 	case 249:
-		return "fadvise64"
+		return "io_cancel"
 	case 250:
-		return "exit_group"
-	case 251:
-		return "lookup_dcookie"
+		return "fadvise64"
 	case 252:
-		return "epoll_create"
+		return "exit_group"
 	case 253:
-		return "epoll_ctl"
+		return "lookup_dcookie"
 	case 254:
-		return "epoll_wait"
+		return "epoll_create"
 	case 255:
-		return "remap_file_pages"
+		return "epoll_ctl"
 	case 256:
-		return "set_tid_address"
+		return "epoll_wait"
 	case 257:
-		return "timer_create"
+		return "remap_file_pages"
 	case 258:
-		return "timer_settime"
+		return "set_tid_address"
 	case 259:
-		return "timer_gettime"
+		return "timer_create"
 	case 260:
-		return "timer_getoverrun"
+		return "timer_settime"
 	case 261:
-		return "timer_delete"
+		return "timer_gettime"
 	case 262:
-		return "clock_settime"
+		return "timer_getoverrun"
 	case 263:
-		return "clock_gettime"
+		return "timer_delete"
 	case 264:
-		return "clock_getres"
+		return "clock_settime"
 	case 265:
-		return "clock_nanosleep"
+		return "clock_gettime"
 	case 266:
-		return "statfs64"
+		return "clock_getres"
 	case 267:
-		return "fstatfs64"
+		return "clock_nanosleep"
 	case 268:
-		return "tgkill"
+		return "statfs64"
 	case 269:
-		return "utimes"
+		return "fstatfs64"
 	case 270:
-		return "fadvise64_64"
+		return "tgkill"
 	case 271:
-		return "vserver"
+		return "utimes"
 	case 272:
-		return "mbind"
+		return "fadvise64_64"
 	case 273:
-		return "get_mempolicy"
+		return "vserver"
 	case 274:
-		return "set_mempolicy"
+		return "mbind"
 	case 275:
-		return "mq_open"
+		return "get_mempolicy"
 	case 276:
-		return "mq_unlink"
+		return "set_mempolicy"
 	case 277:
-		return "mq_timedsend"
+		return "mq_open"
 	case 278:
-		return "mq_timedreceive"
+		return "mq_unlink"
 	case 279:
-		return "mq_notify"
+		return "mq_timedsend"
 	case 280:
-		return "mq_getsetattr"
+		return "mq_timedreceive"
 	case 281:
-		return "kexec_load"
+		return "mq_notify"
 	case 282:
-		return "waitid"
+		return "mq_getsetattr"
 	case 283:
-		return "add_key"
+		return "kexec_load"
 	case 284:
-		return "request_key"
-	case 285:
-		return "keyctl"
+		return "waitid"
 	case 286:
-		return "ioprio_set"
+		return "add_key"
 	case 287:
-		return "ioprio_get"
+		return "request_key"
 	case 288:
-		return "inotify_init"
+		return "keyctl"
 	case 289:
-		return "inotify_add_watch"
+		return "ioprio_set"
 	case 290:
-		return "inotify_rm_watch"
+		return "ioprio_get"
 	case 291:
-		return "migrate_pages"
+		return "inotify_init"
 	case 292:
-		return "openat"
+		return "inotify_add_watch"
 	case 293:
-		return "mkdirat"
+		return "inotify_rm_watch"
 	case 294:
-		return "mknodat"
+		return "migrate_pages"
 	case 295:
-		return "fchownat"
+		return "openat"
 	case 296:
-		return "futimesat"
+		return "mkdirat"
 	case 297:
-		return "fstatat64"
+		return "mknodat"
 	case 298:
-		return "unlinkat"
+		return "fchownat"
 	case 299:
-		return "renameat"
+		return "futimesat"
 	case 300:
-		return "linkat"
+		return "fstatat64"
 	case 301:
-		return "symlinkat"
+		return "unlinkat"
 	case 302:
-		return "readlinkat"
+		return "renameat"
 	case 303:
-		return "fchmodat"
+		return "linkat"
 	case 304:
-		return "faccessat"
+		return "symlinkat"
 	case 305:
-		return "pselect6"
+		return "readlinkat"
 	case 306:
-		return "ppoll"
+		return "fchmodat"
 	case 307:
-		return "unshare"
+		return "faccessat"
 	case 308:
-		return "set_robust_list"
+		return "pselect6"
 	case 309:
-		return "get_robust_list"
+		return "ppoll"
 	case 310:
-		return "splice"
+		return "unshare"
 	case 311:
-		return "sync_file_range"
+		return "set_robust_list"
 	case 312:
-		return "tee"
+		return "get_robust_list"
 	case 313:
-		return "vmsplice"
+		return "splice"
 	case 314:
-		return "move_pages"
+		return "sync_file_range"
 	case 315:
-		return "getcpu"
+		return "tee"
 	case 316:
-		return "epoll_pwait"
+		return "vmsplice"
 	case 317:
-		return "utimensat"
+		return "move_pages"
 	case 318:
-		return "signalfd"
+		return "getcpu"
 	case 319:
-		return "timerfd_create"
+		return "epoll_pwait"
 	case 320:
-		return "eventfd"
+		return "utimensat"
 	case 321:
-		return "fallocate"
+		return "signalfd"
 	case 322:
-		return "timerfd_settime"
+		return "timerfd_create"
 	case 323:
-		return "timerfd_gettime"
+		return "eventfd"
 	case 324:
-		return "signalfd4"
+		return "fallocate"
 	case 325:
-		return "eventfd2"
+		return "timerfd_settime"
 	case 326:
-		return "epoll_create1"
+		return "timerfd_gettime"
 	case 327:
-		return "dup3"
+		return "signalfd4"
 	case 328:
-		return "pipe2"
+		return "eventfd2"
 	case 329:
-		return "inotify_init1"
+		return "epoll_create1"
 	case 330:
-		return "preadv"
+		return "dup3"
 	case 331:
-		return "pwritev"
+		return "pipe2"
 	case 332:
-		return "rt_tgsigqueueinfo"
+		return "inotify_init1"
 	case 333:
-		return "perf_event_open"
+		return "preadv"
 	case 334:
-		return "recvmmsg"
+		return "pwritev"
 	case 335:
-		return "fanotify_init"
+		return "rt_tgsigqueueinfo"
 	case 336:
-		return "fanotify_mark"
+		return "perf_event_open"
 	case 337:
+		return "recvmmsg"
+	case 338:
+		return "fanotify_init"
+	case 339:
+		return "fanotify_mark"
+	case 340:
 		return "prlimit64"
+	case 341:
+		return "name_to_handle_at"
+	case 342:
+		return "open_by_handle_at"
+	case 343:
+		return "clock_adjtime"
+	case 344:
+		return "syncfs"
+	case 345:
+		return "sendmmsg"
+	case 346:
+		return "setns"
+	case 347:
+		return "process_vm_readv"
+	case 348:
+		return "process_vm_writev"
+	case 349:
+		return "kcmp"
+	case 350:
+		return "finit_module"
+	case 351:
+		return "sched_setattr"
+	case 352:
+		return "sched_getattr"
+	case 353:
+		return "renameat2"
+	case 354:
+		return "seccomp"
+	case 355:
+		return "getrandom"
+	case 356:
+		return "memfd_create"
+	case 357:
+		return "bpf"
+	case 358:
+		return "execveat"
+	case 359:
+		return "socket"
+	case 360:
+		return "socketpair"
+	case 361:
+		return "bind"
+	case 362:
+		return "connect"
+	case 363:
+		return "listen"
+	case 364:
+		return "accept4"
+	case 365:
+		return "getsockopt"
+	case 366:
+		return "setsockopt"
+	case 367:
+		return "getsockname"
+	case 368:
+		return "getpeername"
+	case 369:
+		return "sendto"
+	case 370:
+		return "sendmsg"
+	case 371:
+		return "recvfrom"
+	case 372:
+		return "recvmsg"
+	case 373:
+		return "shutdown"
+	case 374:
+		return "userfaultfd"
+	case 375:
+		return "membarrier"
 	}
 	return "unknown"
 }
@@ -1128,242 +1196,310 @@ func GetNum(name string) int {
 		return 218
 	case "madvise":
 		return 219
-	case "madvise1":
-		return 220
 	case "getdents64":
-		return 221
+		return 220
 	case "fcntl64":
-		return 222
+		return 221
 	case "gettid":
-		return 223
-	case "readahead":
 		return 224
-	case "setxattr":
+	case "readahead":
 		return 225
-	case "lsetxattr":
+	case "setxattr":
 		return 226
-	case "fsetxattr":
+	case "lsetxattr":
 		return 227
-	case "getxattr":
+	case "fsetxattr":
 		return 228
-	case "lgetxattr":
+	case "getxattr":
 		return 229
-	case "fgetxattr":
+	case "lgetxattr":
 		return 230
-	case "listxattr":
+	case "fgetxattr":
 		return 231
-	case "llistxattr":
+	case "listxattr":
 		return 232
-	case "flistxattr":
+	case "llistxattr":
 		return 233
-	case "removexattr":
+	case "flistxattr":
 		return 234
-	case "lremovexattr":
+	case "removexattr":
 		return 235
-	case "fremovexattr":
+	case "lremovexattr":
 		return 236
-	case "tkill":
+	case "fremovexattr":
 		return 237
-	case "sendfile64":
+	case "tkill":
 		return 238
-	case "futex":
+	case "sendfile64":
 		return 239
-	case "sched_setaffinity":
+	case "futex":
 		return 240
-	case "sched_getaffinity":
+	case "sched_setaffinity":
 		return 241
-	case "set_thread_area":
+	case "sched_getaffinity":
 		return 242
-	case "get_thread_area":
+	case "set_thread_area":
 		return 243
-	case "io_setup":
+	case "get_thread_area":
 		return 244
-	case "io_destroy":
+	case "io_setup":
 		return 245
-	case "io_getevents":
+	case "io_destroy":
 		return 246
-	case "io_submit":
+	case "io_getevents":
 		return 247
-	case "io_cancel":
+	case "io_submit":
 		return 248
-	case "fadvise64":
+	case "io_cancel":
 		return 249
-	case "exit_group":
+	case "fadvise64":
 		return 250
-	case "lookup_dcookie":
-		return 251
-	case "epoll_create":
+	case "exit_group":
 		return 252
-	case "epoll_ctl":
+	case "lookup_dcookie":
 		return 253
-	case "epoll_wait":
+	case "epoll_create":
 		return 254
-	case "remap_file_pages":
+	case "epoll_ctl":
 		return 255
-	case "set_tid_address":
+	case "epoll_wait":
 		return 256
-	case "timer_create":
+	case "remap_file_pages":
 		return 257
-	case "timer_settime":
+	case "set_tid_address":
 		return 258
-	case "timer_gettime":
+	case "timer_create":
 		return 259
-	case "timer_getoverrun":
+	case "timer_settime":
 		return 260
-	case "timer_delete":
+	case "timer_gettime":
 		return 261
-	case "clock_settime":
+	case "timer_getoverrun":
 		return 262
-	case "clock_gettime":
+	case "timer_delete":
 		return 263
-	case "clock_getres":
+	case "clock_settime":
 		return 264
-	case "clock_nanosleep":
+	case "clock_gettime":
 		return 265
-	case "statfs64":
+	case "clock_getres":
 		return 266
-	case "fstatfs64":
+	case "clock_nanosleep":
 		return 267
-	case "tgkill":
+	case "statfs64":
 		return 268
-	case "utimes":
+	case "fstatfs64":
 		return 269
-	case "fadvise64_64":
+	case "tgkill":
 		return 270
-	case "vserver":
+	case "utimes":
 		return 271
-	case "mbind":
+	case "fadvise64_64":
 		return 272
-	case "get_mempolicy":
+	case "vserver":
 		return 273
-	case "set_mempolicy":
+	case "mbind":
 		return 274
-	case "mq_open":
+	case "get_mempolicy":
 		return 275
-	case "mq_unlink":
+	case "set_mempolicy":
 		return 276
-	case "mq_timedsend":
+	case "mq_open":
 		return 277
-	case "mq_timedreceive":
+	case "mq_unlink":
 		return 278
-	case "mq_notify":
+	case "mq_timedsend":
 		return 279
-	case "mq_getsetattr":
+	case "mq_timedreceive":
 		return 280
-	case "kexec_load":
+	case "mq_notify":
 		return 281
-	case "waitid":
+	case "mq_getsetattr":
 		return 282
-	case "add_key":
+	case "kexec_load":
 		return 283
-	case "request_key":
+	case "waitid":
 		return 284
-	case "keyctl":
-		return 285
-	case "ioprio_set":
+	case "add_key":
 		return 286
-	case "ioprio_get":
+	case "request_key":
 		return 287
-	case "inotify_init":
+	case "keyctl":
 		return 288
-	case "inotify_add_watch":
+	case "ioprio_set":
 		return 289
-	case "inotify_rm_watch":
+	case "ioprio_get":
 		return 290
-	case "migrate_pages":
+	case "inotify_init":
 		return 291
-	case "openat":
+	case "inotify_add_watch":
 		return 292
-	case "mkdirat":
+	case "inotify_rm_watch":
 		return 293
-	case "mknodat":
+	case "migrate_pages":
 		return 294
-	case "fchownat":
+	case "openat":
 		return 295
-	case "futimesat":
+	case "mkdirat":
 		return 296
-	case "fstatat64":
+	case "mknodat":
 		return 297
-	case "unlinkat":
+	case "fchownat":
 		return 298
-	case "renameat":
+	case "futimesat":
 		return 299
-	case "linkat":
+	case "fstatat64":
 		return 300
-	case "symlinkat":
+	case "unlinkat":
 		return 301
-	case "readlinkat":
+	case "renameat":
 		return 302
-	case "fchmodat":
+	case "linkat":
 		return 303
-	case "faccessat":
+	case "symlinkat":
 		return 304
-	case "pselect6":
+	case "readlinkat":
 		return 305
-	case "ppoll":
+	case "fchmodat":
 		return 306
-	case "unshare":
+	case "faccessat":
 		return 307
-	case "set_robust_list":
+	case "pselect6":
 		return 308
-	case "get_robust_list":
+	case "ppoll":
 		return 309
-	case "splice":
+	case "unshare":
 		return 310
-	case "sync_file_range":
+	case "set_robust_list":
 		return 311
-	case "tee":
+	case "get_robust_list":
 		return 312
-	case "vmsplice":
+	case "splice":
 		return 313
-	case "move_pages":
+	case "sync_file_range":
 		return 314
-	case "getcpu":
+	case "tee":
 		return 315
-	case "epoll_pwait":
+	case "vmsplice":
 		return 316
-	case "utimensat":
+	case "move_pages":
 		return 317
-	case "signalfd":
+	case "getcpu":
 		return 318
-	case "timerfd_create":
+	case "epoll_pwait":
 		return 319
-	case "eventfd":
+	case "utimensat":
 		return 320
-	case "fallocate":
+	case "signalfd":
 		return 321
-	case "timerfd_settime":
+	case "timerfd_create":
 		return 322
-	case "timerfd_gettime":
+	case "eventfd":
 		return 323
-	case "signalfd4":
+	case "fallocate":
 		return 324
-	case "eventfd2":
+	case "timerfd_settime":
 		return 325
-	case "epoll_create1":
+	case "timerfd_gettime":
 		return 326
-	case "dup3":
+	case "signalfd4":
 		return 327
-	case "pipe2":
+	case "eventfd2":
 		return 328
-	case "inotify_init1":
+	case "epoll_create1":
 		return 329
-	case "preadv":
+	case "dup3":
 		return 330
-	case "pwritev":
+	case "pipe2":
 		return 331
-	case "rt_tgsigqueueinfo":
+	case "inotify_init1":
 		return 332
-	case "perf_event_open":
+	case "preadv":
 		return 333
-	case "recvmmsg":
+	case "pwritev":
 		return 334
-	case "fanotify_init":
+	case "rt_tgsigqueueinfo":
 		return 335
-	case "fanotify_mark":
+	case "perf_event_open":
 		return 336
-	case "prlimit64":
+	case "recvmmsg":
 		return 337
+	case "fanotify_init":
+		return 338
+	case "fanotify_mark":
+		return 339
+	case "prlimit64":
+		return 340
+	case "name_to_handle_at":
+		return 341
+	case "open_by_handle_at":
+		return 342
+	case "clock_adjtime":
+		return 343
+	case "syncfs":
+		return 344
+	case "sendmmsg":
+		return 345
+	case "setns":
+		return 346
+	case "process_vm_readv":
+		return 347
+	case "process_vm_writev":
+		return 348
+	case "kcmp":
+		return 349
+	case "finit_module":
+		return 350
+	case "sched_setattr":
+		return 351
+	case "sched_getattr":
+		return 352
+	case "renameat2":
+		return 353
+	case "seccomp":
+		return 354
+	case "getrandom":
+		return 355
+	case "memfd_create":
+		return 356
+	case "bpf":
+		return 357
+	case "execveat":
+		return 358
+	case "socket":
+		return 359
+	case "socketpair":
+		return 360
+	case "bind":
+		return 361
+	case "connect":
+		return 362
+	case "listen":
+		return 363
+	case "accept4":
+		return 364
+	case "getsockopt":
+		return 365
+	case "setsockopt":
+		return 366
+	case "getsockname":
+		return 367
+	case "getpeername":
+		return 368
+	case "sendto":
+		return 369
+	case "sendmsg":
+		return 370
+	case "recvfrom":
+		return 371
+	case "recvmsg":
+		return 372
+	case "shutdown":
+		return 373
+	case "userfaultfd":
+		return 374
+	case "membarrier":
+		return 375
 	}
 	return -1
 }
@@ -1810,8 +1946,6 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType(nil)
 	case "madvise":
 		return []ArgType{ARG_PTR, ARG_INT}
-	case "madvise1":
-		return []ArgType(nil)
 	case "getdents64":
 		return []ArgType(nil)
 	case "fcntl64":
@@ -2045,6 +2179,76 @@ func GetArgsTypes(name string) []ArgType {
 	case "fanotify_mark":
 		return []ArgType(nil)
 	case "prlimit64":
+		return []ArgType(nil)
+	case "name_to_handle_at":
+		return []ArgType(nil)
+	case "open_by_handle_at":
+		return []ArgType(nil)
+	case "clock_adjtime":
+		return []ArgType(nil)
+	case "syncfs":
+		return []ArgType(nil)
+	case "sendmmsg":
+		return []ArgType(nil)
+	case "setns":
+		return []ArgType(nil)
+	case "process_vm_readv":
+		return []ArgType(nil)
+	case "process_vm_writev":
+		return []ArgType(nil)
+	case "kcmp":
+		return []ArgType(nil)
+	case "finit_module":
+		return []ArgType(nil)
+	case "sched_setattr":
+		return []ArgType(nil)
+	case "sched_getattr":
+		return []ArgType(nil)
+	case "renameat2":
+		return []ArgType(nil)
+	case "seccomp":
+		return []ArgType(nil)
+	case "getrandom":
+		return []ArgType(nil)
+	case "memfd_create":
+		return []ArgType(nil)
+	case "bpf":
+		return []ArgType(nil)
+	case "execveat":
+		return []ArgType(nil)
+	case "socket":
+		return []ArgType(nil)
+	case "socketpair":
+		return []ArgType(nil)
+	case "bind":
+		return []ArgType(nil)
+	case "connect":
+		return []ArgType(nil)
+	case "listen":
+		return []ArgType(nil)
+	case "accept4":
+		return []ArgType{ARG_INT, ARG_INT}
+	case "getsockopt":
+		return []ArgType(nil)
+	case "setsockopt":
+		return []ArgType(nil)
+	case "getsockname":
+		return []ArgType{ARG_INT}
+	case "getpeername":
+		return []ArgType(nil)
+	case "sendto":
+		return []ArgType(nil)
+	case "sendmsg":
+		return []ArgType{ARG_INT, ARG_PTR, ARG_PTR, ARG_INT}
+	case "recvfrom":
+		return []ArgType(nil)
+	case "recvmsg":
+		return []ArgType{ARG_INT, ARG_PTR, ARG_INT}
+	case "shutdown":
+		return []ArgType(nil)
+	case "userfaultfd":
+		return []ArgType(nil)
+	case "membarrier":
 		return []ArgType(nil)
 	}
 	return nil

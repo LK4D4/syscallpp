@@ -612,6 +612,50 @@ func GetName(num int) string {
 		return "fanotify_mark"
 	case 302:
 		return "prlimit64"
+	case 303:
+		return "name_to_handle_at"
+	case 304:
+		return "open_by_handle_at"
+	case 305:
+		return "clock_adjtime"
+	case 306:
+		return "syncfs"
+	case 307:
+		return "sendmmsg"
+	case 308:
+		return "setns"
+	case 309:
+		return "getcpu"
+	case 310:
+		return "process_vm_readv"
+	case 311:
+		return "process_vm_writev"
+	case 312:
+		return "kcmp"
+	case 313:
+		return "finit_module"
+	case 314:
+		return "sched_setattr"
+	case 315:
+		return "sched_getattr"
+	case 316:
+		return "renameat2"
+	case 317:
+		return "seccomp"
+	case 318:
+		return "getrandom"
+	case 319:
+		return "memfd_create"
+	case 320:
+		return "kexec_file_load"
+	case 321:
+		return "bpf"
+	case 322:
+		return "execveat"
+	case 323:
+		return "userfaultfd"
+	case 324:
+		return "membarrier"
 	}
 	return "unknown"
 }
@@ -1224,6 +1268,50 @@ func GetNum(name string) int {
 		return 301
 	case "prlimit64":
 		return 302
+	case "name_to_handle_at":
+		return 303
+	case "open_by_handle_at":
+		return 304
+	case "clock_adjtime":
+		return 305
+	case "syncfs":
+		return 306
+	case "sendmmsg":
+		return 307
+	case "setns":
+		return 308
+	case "getcpu":
+		return 309
+	case "process_vm_readv":
+		return 310
+	case "process_vm_writev":
+		return 311
+	case "kcmp":
+		return 312
+	case "finit_module":
+		return 313
+	case "sched_setattr":
+		return 314
+	case "sched_getattr":
+		return 315
+	case "renameat2":
+		return 316
+	case "seccomp":
+		return 317
+	case "getrandom":
+		return 318
+	case "memfd_create":
+		return 319
+	case "kexec_file_load":
+		return 320
+	case "bpf":
+		return 321
+	case "execveat":
+		return 322
+	case "userfaultfd":
+		return 323
+	case "membarrier":
+		return 324
 	}
 	return -1
 }
@@ -1835,6 +1923,50 @@ func GetArgsTypes(name string) []ArgType {
 	case "fanotify_mark":
 		return []ArgType(nil)
 	case "prlimit64":
+		return []ArgType(nil)
+	case "name_to_handle_at":
+		return []ArgType(nil)
+	case "open_by_handle_at":
+		return []ArgType(nil)
+	case "clock_adjtime":
+		return []ArgType(nil)
+	case "syncfs":
+		return []ArgType(nil)
+	case "sendmmsg":
+		return []ArgType(nil)
+	case "setns":
+		return []ArgType(nil)
+	case "getcpu":
+		return []ArgType(nil)
+	case "process_vm_readv":
+		return []ArgType(nil)
+	case "process_vm_writev":
+		return []ArgType(nil)
+	case "kcmp":
+		return []ArgType(nil)
+	case "finit_module":
+		return []ArgType(nil)
+	case "sched_setattr":
+		return []ArgType(nil)
+	case "sched_getattr":
+		return []ArgType(nil)
+	case "renameat2":
+		return []ArgType(nil)
+	case "seccomp":
+		return []ArgType(nil)
+	case "getrandom":
+		return []ArgType(nil)
+	case "memfd_create":
+		return []ArgType(nil)
+	case "kexec_file_load":
+		return []ArgType(nil)
+	case "bpf":
+		return []ArgType(nil)
+	case "execveat":
+		return []ArgType(nil)
+	case "userfaultfd":
+		return []ArgType(nil)
+	case "membarrier":
 		return []ArgType(nil)
 	}
 	return nil

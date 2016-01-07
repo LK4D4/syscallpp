@@ -101,6 +101,42 @@ func parseArm64Numbers(s *bufio.Scanner) ([]sc, error) {
 	return scs, nil
 }
 
+func parseArm32Numbers(s *bufio.Scanner) ([]sc, error) {
+	const numPrefix = "#define __NR_"
+
+	var scs []sc
+	for s.Scan() {
+		ln := s.Text()
+		if !strings.HasPrefix(ln, numPrefix) {
+			continue
+		}
+		ln = ln[len(numPrefix):]
+		parts := strings.SplitN(ln, " ", 2)
+		if strings.HasSuffix(parts[0], "SYSCALL_BASE") {
+			continue
+		}
+		if parts[0] == "sync_file_range2" {
+			for _, psc := range scs {
+				if psc.name == "arm_sync_file_range" {
+					scs = append(scs, sc{name: "sync_file_range2", number: psc.number})
+				}
+			}
+			continue
+		}
+		strNum := parts[1][len("(__NR_SYSCALL_BASE+"):]
+		strNum = strings.Trim(strNum, " )")
+		num, err := strconv.Atoi(strNum)
+		if err != nil {
+			return nil, err
+		}
+		scs = append(scs, sc{name: parts[0], number: num})
+	}
+	if s.Err() != nil {
+		return nil, s.Err()
+	}
+	return scs, nil
+}
+
 func parseLinuxNumbers(arch string) ([]sc, error) {
 	fName, ok := archNumFiles[arch]
 	if !ok {
@@ -119,6 +155,8 @@ func parseLinuxNumbers(arch string) ([]sc, error) {
 		return parseSimpleArchNumbers(s)
 	case "arm64":
 		return parseArm64Numbers(s)
+	case "arm":
+		return parseArm32Numbers(s)
 	default:
 		return nil, fmt.Errorf("Unsupported arch: %s", arch)
 	}

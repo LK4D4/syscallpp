@@ -7,1409 +7,1449 @@ package syscallpp
 func GetName(num int) string {
 	switch num {
 	case 0:
-		return "oabi_syscall_base"
-	case 1:
-		return "syscall_base"
-	case 2:
 		return "restart_syscall"
-	case 3:
+	case 1:
 		return "exit"
-	case 4:
+	case 2:
 		return "fork"
-	case 5:
+	case 3:
 		return "read"
-	case 6:
+	case 4:
 		return "write"
-	case 7:
+	case 5:
 		return "open"
-	case 8:
+	case 6:
 		return "close"
-	case 9:
+	case 8:
 		return "creat"
-	case 10:
+	case 9:
 		return "link"
-	case 11:
+	case 10:
 		return "unlink"
-	case 12:
+	case 11:
 		return "execve"
-	case 13:
+	case 12:
 		return "chdir"
-	case 14:
+	case 13:
 		return "time"
-	case 15:
+	case 14:
 		return "mknod"
-	case 16:
+	case 15:
 		return "chmod"
-	case 17:
+	case 16:
 		return "lchown"
-	case 18:
-		return "lseek"
 	case 19:
-		return "getpid"
+		return "lseek"
 	case 20:
-		return "mount"
+		return "getpid"
 	case 21:
-		return "umount"
+		return "mount"
 	case 22:
-		return "setuid"
+		return "umount"
 	case 23:
-		return "getuid"
+		return "setuid"
 	case 24:
-		return "stime"
+		return "getuid"
 	case 25:
-		return "ptrace"
+		return "stime"
 	case 26:
-		return "alarm"
+		return "ptrace"
 	case 27:
-		return "pause"
-	case 28:
-		return "utime"
+		return "alarm"
 	case 29:
-		return "access"
+		return "pause"
 	case 30:
-		return "nice"
-	case 31:
-		return "sync"
-	case 32:
-		return "kill"
+		return "utime"
 	case 33:
-		return "rename"
+		return "access"
 	case 34:
-		return "mkdir"
-	case 35:
-		return "rmdir"
+		return "nice"
 	case 36:
-		return "dup"
+		return "sync"
 	case 37:
-		return "pipe"
+		return "kill"
 	case 38:
-		return "times"
+		return "rename"
 	case 39:
-		return "brk"
+		return "mkdir"
 	case 40:
-		return "setgid"
+		return "rmdir"
 	case 41:
-		return "getgid"
+		return "dup"
 	case 42:
-		return "geteuid"
+		return "pipe"
 	case 43:
-		return "getegid"
-	case 44:
-		return "acct"
+		return "times"
 	case 45:
-		return "umount2"
+		return "brk"
 	case 46:
-		return "ioctl"
+		return "setgid"
 	case 47:
-		return "fcntl"
-	case 48:
-		return "setpgid"
+		return "getgid"
 	case 49:
-		return "umask"
+		return "geteuid"
 	case 50:
-		return "chroot"
+		return "getegid"
 	case 51:
-		return "ustat"
+		return "acct"
 	case 52:
-		return "dup2"
-	case 53:
-		return "getppid"
+		return "umount2"
 	case 54:
-		return "getpgrp"
+		return "ioctl"
 	case 55:
-		return "setsid"
-	case 56:
-		return "sigaction"
+		return "fcntl"
 	case 57:
-		return "setreuid"
-	case 58:
-		return "setregid"
-	case 59:
-		return "sigsuspend"
+		return "setpgid"
 	case 60:
-		return "sigpending"
+		return "umask"
 	case 61:
-		return "sethostname"
+		return "chroot"
 	case 62:
-		return "setrlimit"
+		return "ustat"
 	case 63:
-		return "getrlimit"
+		return "dup2"
 	case 64:
-		return "getrusage"
+		return "getppid"
 	case 65:
-		return "gettimeofday"
+		return "getpgrp"
 	case 66:
-		return "settimeofday"
+		return "setsid"
 	case 67:
-		return "getgroups"
-	case 68:
-		return "setgroups"
-	case 69:
-		return "select"
+		return "sigaction"
 	case 70:
-		return "symlink"
+		return "setreuid"
 	case 71:
-		return "readlink"
+		return "setregid"
 	case 72:
-		return "uselib"
+		return "sigsuspend"
 	case 73:
-		return "swapon"
+		return "sigpending"
 	case 74:
-		return "reboot"
+		return "sethostname"
 	case 75:
-		return "readdir"
+		return "setrlimit"
 	case 76:
-		return "mmap"
+		return "getrlimit"
 	case 77:
-		return "munmap"
+		return "getrusage"
 	case 78:
-		return "truncate"
+		return "gettimeofday"
 	case 79:
-		return "ftruncate"
+		return "settimeofday"
 	case 80:
-		return "fchmod"
+		return "getgroups"
 	case 81:
-		return "fchown"
+		return "setgroups"
 	case 82:
-		return "getpriority"
+		return "select"
 	case 83:
-		return "setpriority"
-	case 84:
-		return "statfs"
+		return "symlink"
 	case 85:
-		return "fstatfs"
+		return "readlink"
 	case 86:
-		return "socketcall"
+		return "uselib"
 	case 87:
-		return "syslog"
+		return "swapon"
 	case 88:
-		return "setitimer"
+		return "reboot"
 	case 89:
-		return "getitimer"
+		return "readdir"
 	case 90:
-		return "stat"
+		return "mmap"
 	case 91:
-		return "lstat"
+		return "munmap"
 	case 92:
-		return "fstat"
+		return "truncate"
 	case 93:
-		return "vhangup"
+		return "ftruncate"
 	case 94:
-		return "syscall"
+		return "fchmod"
 	case 95:
-		return "wait4"
+		return "fchown"
 	case 96:
-		return "swapoff"
+		return "getpriority"
 	case 97:
-		return "sysinfo"
-	case 98:
-		return "ipc"
+		return "setpriority"
 	case 99:
-		return "fsync"
+		return "statfs"
 	case 100:
-		return "sigreturn"
-	case 101:
-		return "clone"
+		return "fstatfs"
 	case 102:
-		return "setdomainname"
+		return "socketcall"
 	case 103:
-		return "uname"
+		return "syslog"
 	case 104:
-		return "adjtimex"
+		return "setitimer"
 	case 105:
-		return "mprotect"
+		return "getitimer"
 	case 106:
-		return "sigprocmask"
+		return "stat"
 	case 107:
-		return "init_module"
+		return "lstat"
 	case 108:
-		return "delete_module"
-	case 109:
-		return "quotactl"
-	case 110:
-		return "getpgid"
+		return "fstat"
 	case 111:
-		return "fchdir"
-	case 112:
-		return "bdflush"
+		return "vhangup"
 	case 113:
-		return "sysfs"
+		return "syscall"
 	case 114:
-		return "personality"
+		return "wait4"
 	case 115:
-		return "setfsuid"
+		return "swapoff"
 	case 116:
-		return "setfsgid"
+		return "sysinfo"
 	case 117:
-		return "_llseek"
+		return "ipc"
 	case 118:
-		return "getdents"
+		return "fsync"
 	case 119:
-		return "_newselect"
+		return "sigreturn"
 	case 120:
-		return "flock"
+		return "clone"
 	case 121:
-		return "msync"
+		return "setdomainname"
 	case 122:
-		return "readv"
-	case 123:
-		return "writev"
+		return "uname"
 	case 124:
-		return "getsid"
+		return "adjtimex"
 	case 125:
-		return "fdatasync"
+		return "mprotect"
 	case 126:
-		return "_sysctl"
-	case 127:
-		return "mlock"
+		return "sigprocmask"
 	case 128:
-		return "munlock"
+		return "init_module"
 	case 129:
-		return "mlockall"
-	case 130:
-		return "munlockall"
+		return "delete_module"
 	case 131:
-		return "sched_setparam"
+		return "quotactl"
 	case 132:
-		return "sched_getparam"
+		return "getpgid"
 	case 133:
-		return "sched_setscheduler"
+		return "fchdir"
 	case 134:
-		return "sched_getscheduler"
+		return "bdflush"
 	case 135:
-		return "sched_yield"
+		return "sysfs"
 	case 136:
-		return "sched_get_priority_max"
-	case 137:
-		return "sched_get_priority_min"
+		return "personality"
 	case 138:
-		return "sched_rr_get_interval"
+		return "setfsuid"
 	case 139:
-		return "nanosleep"
+		return "setfsgid"
 	case 140:
-		return "mremap"
+		return "_llseek"
 	case 141:
-		return "setresuid"
+		return "getdents"
 	case 142:
-		return "getresuid"
+		return "_newselect"
 	case 143:
-		return "poll"
+		return "flock"
 	case 144:
-		return "nfsservctl"
+		return "msync"
 	case 145:
-		return "setresgid"
+		return "readv"
 	case 146:
-		return "getresgid"
+		return "writev"
 	case 147:
-		return "prctl"
+		return "getsid"
 	case 148:
-		return "rt_sigreturn"
+		return "fdatasync"
 	case 149:
-		return "rt_sigaction"
+		return "_sysctl"
 	case 150:
-		return "rt_sigprocmask"
+		return "mlock"
 	case 151:
-		return "rt_sigpending"
+		return "munlock"
 	case 152:
-		return "rt_sigtimedwait"
+		return "mlockall"
 	case 153:
-		return "rt_sigqueueinfo"
+		return "munlockall"
 	case 154:
-		return "rt_sigsuspend"
+		return "sched_setparam"
 	case 155:
-		return "pread64"
+		return "sched_getparam"
 	case 156:
-		return "pwrite64"
+		return "sched_setscheduler"
 	case 157:
-		return "chown"
+		return "sched_getscheduler"
 	case 158:
-		return "getcwd"
+		return "sched_yield"
 	case 159:
-		return "capget"
+		return "sched_get_priority_max"
 	case 160:
-		return "capset"
+		return "sched_get_priority_min"
 	case 161:
-		return "sigaltstack"
+		return "sched_rr_get_interval"
 	case 162:
-		return "sendfile"
+		return "nanosleep"
 	case 163:
-		return "vfork"
+		return "mremap"
 	case 164:
-		return "ugetrlimit"
+		return "setresuid"
 	case 165:
-		return "mmap2"
-	case 166:
-		return "truncate64"
-	case 167:
-		return "ftruncate64"
+		return "getresuid"
 	case 168:
-		return "stat64"
+		return "poll"
 	case 169:
-		return "lstat64"
+		return "nfsservctl"
 	case 170:
-		return "fstat64"
+		return "setresgid"
 	case 171:
-		return "lchown32"
+		return "getresgid"
 	case 172:
-		return "getuid32"
+		return "prctl"
 	case 173:
-		return "getgid32"
+		return "rt_sigreturn"
 	case 174:
-		return "geteuid32"
+		return "rt_sigaction"
 	case 175:
-		return "getegid32"
+		return "rt_sigprocmask"
 	case 176:
-		return "setreuid32"
+		return "rt_sigpending"
 	case 177:
-		return "setregid32"
+		return "rt_sigtimedwait"
 	case 178:
-		return "getgroups32"
+		return "rt_sigqueueinfo"
 	case 179:
-		return "setgroups32"
+		return "rt_sigsuspend"
 	case 180:
-		return "fchown32"
+		return "pread64"
 	case 181:
-		return "setresuid32"
+		return "pwrite64"
 	case 182:
-		return "getresuid32"
+		return "chown"
 	case 183:
-		return "setresgid32"
+		return "getcwd"
 	case 184:
-		return "getresgid32"
+		return "capget"
 	case 185:
-		return "chown32"
+		return "capset"
 	case 186:
-		return "setuid32"
+		return "sigaltstack"
 	case 187:
-		return "setgid32"
-	case 188:
-		return "setfsuid32"
-	case 189:
-		return "setfsgid32"
+		return "sendfile"
 	case 190:
-		return "getdents64"
+		return "vfork"
 	case 191:
-		return "pivot_root"
+		return "ugetrlimit"
 	case 192:
-		return "mincore"
+		return "mmap2"
 	case 193:
-		return "madvise"
+		return "truncate64"
 	case 194:
-		return "fcntl64"
+		return "ftruncate64"
 	case 195:
-		return "gettid"
+		return "stat64"
 	case 196:
-		return "readahead"
+		return "lstat64"
 	case 197:
-		return "setxattr"
+		return "fstat64"
 	case 198:
-		return "lsetxattr"
+		return "lchown32"
 	case 199:
-		return "fsetxattr"
+		return "getuid32"
 	case 200:
-		return "getxattr"
+		return "getgid32"
 	case 201:
-		return "lgetxattr"
+		return "geteuid32"
 	case 202:
-		return "fgetxattr"
+		return "getegid32"
 	case 203:
-		return "listxattr"
+		return "setreuid32"
 	case 204:
-		return "llistxattr"
+		return "setregid32"
 	case 205:
-		return "flistxattr"
+		return "getgroups32"
 	case 206:
-		return "removexattr"
+		return "setgroups32"
 	case 207:
-		return "lremovexattr"
+		return "fchown32"
 	case 208:
-		return "fremovexattr"
+		return "setresuid32"
 	case 209:
-		return "tkill"
+		return "getresuid32"
 	case 210:
-		return "sendfile64"
+		return "setresgid32"
 	case 211:
-		return "futex"
+		return "getresgid32"
 	case 212:
-		return "sched_setaffinity"
+		return "chown32"
 	case 213:
-		return "sched_getaffinity"
+		return "setuid32"
 	case 214:
-		return "io_setup"
+		return "setgid32"
 	case 215:
-		return "io_destroy"
+		return "setfsuid32"
 	case 216:
-		return "io_getevents"
+		return "setfsgid32"
 	case 217:
-		return "io_submit"
+		return "getdents64"
 	case 218:
-		return "io_cancel"
+		return "pivot_root"
 	case 219:
-		return "exit_group"
+		return "mincore"
 	case 220:
-		return "lookup_dcookie"
+		return "madvise"
 	case 221:
-		return "epoll_create"
-	case 222:
-		return "epoll_ctl"
-	case 223:
-		return "epoll_wait"
+		return "fcntl64"
 	case 224:
-		return "remap_file_pages"
+		return "gettid"
 	case 225:
-		return "set_tid_address"
+		return "readahead"
 	case 226:
-		return "timer_create"
+		return "setxattr"
 	case 227:
-		return "timer_settime"
+		return "lsetxattr"
 	case 228:
-		return "timer_gettime"
+		return "fsetxattr"
 	case 229:
-		return "timer_getoverrun"
+		return "getxattr"
 	case 230:
-		return "timer_delete"
+		return "lgetxattr"
 	case 231:
-		return "clock_settime"
+		return "fgetxattr"
 	case 232:
-		return "clock_gettime"
+		return "listxattr"
 	case 233:
-		return "clock_getres"
+		return "llistxattr"
 	case 234:
-		return "clock_nanosleep"
+		return "flistxattr"
 	case 235:
-		return "statfs64"
+		return "removexattr"
 	case 236:
-		return "fstatfs64"
+		return "lremovexattr"
 	case 237:
-		return "tgkill"
+		return "fremovexattr"
 	case 238:
-		return "utimes"
+		return "tkill"
 	case 239:
-		return "arm_fadvise64_64"
+		return "sendfile64"
 	case 240:
-		return "pciconfig_iobase"
+		return "futex"
 	case 241:
-		return "pciconfig_read"
+		return "sched_setaffinity"
 	case 242:
-		return "pciconfig_write"
+		return "sched_getaffinity"
 	case 243:
-		return "mq_open"
+		return "io_setup"
 	case 244:
-		return "mq_unlink"
+		return "io_destroy"
 	case 245:
-		return "mq_timedsend"
+		return "io_getevents"
 	case 246:
-		return "mq_timedreceive"
+		return "io_submit"
 	case 247:
-		return "mq_notify"
+		return "io_cancel"
 	case 248:
-		return "mq_getsetattr"
+		return "exit_group"
 	case 249:
-		return "waitid"
+		return "lookup_dcookie"
 	case 250:
-		return "socket"
+		return "epoll_create"
 	case 251:
-		return "bind"
+		return "epoll_ctl"
 	case 252:
-		return "connect"
+		return "epoll_wait"
 	case 253:
-		return "listen"
-	case 254:
-		return "accept"
-	case 255:
-		return "getsockname"
+		return "remap_file_pages"
 	case 256:
-		return "getpeername"
+		return "set_tid_address"
 	case 257:
-		return "socketpair"
+		return "timer_create"
 	case 258:
-		return "send"
+		return "timer_settime"
 	case 259:
-		return "sendto"
+		return "timer_gettime"
 	case 260:
-		return "recv"
+		return "timer_getoverrun"
 	case 261:
-		return "recvfrom"
+		return "timer_delete"
 	case 262:
-		return "shutdown"
+		return "clock_settime"
 	case 263:
-		return "setsockopt"
+		return "clock_gettime"
 	case 264:
-		return "getsockopt"
+		return "clock_getres"
 	case 265:
-		return "sendmsg"
+		return "clock_nanosleep"
 	case 266:
-		return "recvmsg"
+		return "statfs64"
 	case 267:
-		return "semop"
+		return "fstatfs64"
 	case 268:
-		return "semget"
+		return "tgkill"
 	case 269:
-		return "semctl"
+		return "utimes"
 	case 270:
-		return "msgsnd"
+		return "arm_fadvise64_64"
 	case 271:
-		return "msgrcv"
+		return "pciconfig_iobase"
 	case 272:
-		return "msgget"
+		return "pciconfig_read"
 	case 273:
-		return "msgctl"
+		return "pciconfig_write"
 	case 274:
-		return "shmat"
+		return "mq_open"
 	case 275:
-		return "shmdt"
+		return "mq_unlink"
 	case 276:
-		return "shmget"
+		return "mq_timedsend"
 	case 277:
-		return "shmctl"
+		return "mq_timedreceive"
 	case 278:
-		return "add_key"
+		return "mq_notify"
 	case 279:
-		return "request_key"
+		return "mq_getsetattr"
 	case 280:
-		return "keyctl"
+		return "waitid"
 	case 281:
-		return "semtimedop"
+		return "socket"
 	case 282:
-		return "vserver"
+		return "bind"
 	case 283:
-		return "ioprio_set"
+		return "connect"
 	case 284:
-		return "ioprio_get"
+		return "listen"
 	case 285:
-		return "inotify_init"
+		return "accept"
 	case 286:
-		return "inotify_add_watch"
+		return "getsockname"
 	case 287:
-		return "inotify_rm_watch"
+		return "getpeername"
 	case 288:
-		return "mbind"
+		return "socketpair"
 	case 289:
-		return "get_mempolicy"
+		return "send"
 	case 290:
-		return "set_mempolicy"
+		return "sendto"
 	case 291:
-		return "openat"
+		return "recv"
 	case 292:
-		return "mkdirat"
+		return "recvfrom"
 	case 293:
-		return "mknodat"
+		return "shutdown"
 	case 294:
-		return "fchownat"
+		return "setsockopt"
 	case 295:
-		return "futimesat"
+		return "getsockopt"
 	case 296:
-		return "fstatat64"
+		return "sendmsg"
 	case 297:
-		return "unlinkat"
+		return "recvmsg"
 	case 298:
-		return "renameat"
+		return "semop"
 	case 299:
-		return "linkat"
+		return "semget"
 	case 300:
-		return "symlinkat"
+		return "semctl"
 	case 301:
-		return "readlinkat"
+		return "msgsnd"
 	case 302:
-		return "fchmodat"
+		return "msgrcv"
 	case 303:
-		return "faccessat"
+		return "msgget"
 	case 304:
-		return "pselect6"
+		return "msgctl"
 	case 305:
-		return "ppoll"
+		return "shmat"
 	case 306:
-		return "unshare"
+		return "shmdt"
 	case 307:
-		return "set_robust_list"
+		return "shmget"
 	case 308:
-		return "get_robust_list"
+		return "shmctl"
 	case 309:
-		return "splice"
+		return "add_key"
 	case 310:
-		return "arm_sync_file_range"
+		return "request_key"
 	case 311:
-		return "tee"
+		return "keyctl"
 	case 312:
-		return "vmsplice"
+		return "semtimedop"
 	case 313:
-		return "move_pages"
+		return "vserver"
 	case 314:
-		return "getcpu"
+		return "ioprio_set"
 	case 315:
-		return "epoll_pwait"
+		return "ioprio_get"
 	case 316:
-		return "kexec_load"
+		return "inotify_init"
 	case 317:
-		return "utimensat"
+		return "inotify_add_watch"
 	case 318:
-		return "signalfd"
+		return "inotify_rm_watch"
 	case 319:
-		return "timerfd_create"
+		return "mbind"
 	case 320:
-		return "eventfd"
+		return "get_mempolicy"
 	case 321:
-		return "fallocate"
+		return "set_mempolicy"
 	case 322:
-		return "timerfd_settime"
+		return "openat"
 	case 323:
-		return "timerfd_gettime"
+		return "mkdirat"
 	case 324:
-		return "signalfd4"
+		return "mknodat"
 	case 325:
-		return "eventfd2"
+		return "fchownat"
 	case 326:
-		return "epoll_create1"
+		return "futimesat"
 	case 327:
-		return "dup3"
+		return "fstatat64"
 	case 328:
-		return "pipe2"
+		return "unlinkat"
 	case 329:
-		return "inotify_init1"
+		return "renameat"
 	case 330:
-		return "preadv"
+		return "linkat"
 	case 331:
-		return "pwritev"
+		return "symlinkat"
 	case 332:
-		return "rt_tgsigqueueinfo"
+		return "readlinkat"
 	case 333:
-		return "perf_event_open"
+		return "fchmodat"
 	case 334:
-		return "recvmmsg"
+		return "faccessat"
 	case 335:
-		return "accept4"
+		return "pselect6"
 	case 336:
-		return "fanotify_init"
+		return "ppoll"
 	case 337:
-		return "fanotify_mark"
+		return "unshare"
 	case 338:
-		return "prlimit64"
+		return "set_robust_list"
 	case 339:
-		return "name_to_handle_at"
+		return "get_robust_list"
 	case 340:
-		return "open_by_handle_at"
+		return "splice"
 	case 341:
-		return "clock_adjtime"
+		return "sync_file_range2"
+	case 341:
+		return "arm_sync_file_range"
 	case 342:
-		return "syncfs"
+		return "tee"
 	case 343:
-		return "sendmmsg"
+		return "vmsplice"
 	case 344:
-		return "setns"
+		return "move_pages"
 	case 345:
-		return "process_vm_readv"
+		return "getcpu"
 	case 346:
+		return "epoll_pwait"
+	case 347:
+		return "kexec_load"
+	case 348:
+		return "utimensat"
+	case 349:
+		return "signalfd"
+	case 350:
+		return "timerfd_create"
+	case 351:
+		return "eventfd"
+	case 352:
+		return "fallocate"
+	case 353:
+		return "timerfd_settime"
+	case 354:
+		return "timerfd_gettime"
+	case 355:
+		return "signalfd4"
+	case 356:
+		return "eventfd2"
+	case 357:
+		return "epoll_create1"
+	case 358:
+		return "dup3"
+	case 359:
+		return "pipe2"
+	case 360:
+		return "inotify_init1"
+	case 361:
+		return "preadv"
+	case 362:
+		return "pwritev"
+	case 363:
+		return "rt_tgsigqueueinfo"
+	case 364:
+		return "perf_event_open"
+	case 365:
+		return "recvmmsg"
+	case 366:
+		return "accept4"
+	case 367:
+		return "fanotify_init"
+	case 368:
+		return "fanotify_mark"
+	case 369:
+		return "prlimit64"
+	case 370:
+		return "name_to_handle_at"
+	case 371:
+		return "open_by_handle_at"
+	case 372:
+		return "clock_adjtime"
+	case 373:
+		return "syncfs"
+	case 374:
+		return "sendmmsg"
+	case 375:
+		return "setns"
+	case 376:
+		return "process_vm_readv"
+	case 377:
 		return "process_vm_writev"
+	case 378:
+		return "kcmp"
+	case 379:
+		return "finit_module"
+	case 380:
+		return "sched_setattr"
+	case 381:
+		return "sched_getattr"
+	case 382:
+		return "renameat2"
+	case 383:
+		return "seccomp"
+	case 384:
+		return "getrandom"
+	case 385:
+		return "memfd_create"
+	case 386:
+		return "bpf"
+	case 387:
+		return "execveat"
+	case 388:
+		return "userfaultfd"
+	case 389:
+		return "membarrier"
 	}
 	return "unknown"
 }
 
 func GetNum(name string) int {
 	switch name {
-	case "oabi_syscall_base":
-		return 0
-	case "syscall_base":
-		return 1
 	case "restart_syscall":
-		return 2
+		return 0
 	case "exit":
-		return 3
+		return 1
 	case "fork":
-		return 4
+		return 2
 	case "read":
-		return 5
+		return 3
 	case "write":
-		return 6
+		return 4
 	case "open":
-		return 7
+		return 5
 	case "close":
-		return 8
+		return 6
 	case "creat":
-		return 9
+		return 8
 	case "link":
-		return 10
+		return 9
 	case "unlink":
-		return 11
+		return 10
 	case "execve":
-		return 12
+		return 11
 	case "chdir":
-		return 13
+		return 12
 	case "time":
-		return 14
+		return 13
 	case "mknod":
-		return 15
+		return 14
 	case "chmod":
-		return 16
+		return 15
 	case "lchown":
-		return 17
+		return 16
 	case "lseek":
-		return 18
-	case "getpid":
 		return 19
-	case "mount":
+	case "getpid":
 		return 20
-	case "umount":
+	case "mount":
 		return 21
-	case "setuid":
+	case "umount":
 		return 22
-	case "getuid":
+	case "setuid":
 		return 23
-	case "stime":
+	case "getuid":
 		return 24
-	case "ptrace":
+	case "stime":
 		return 25
-	case "alarm":
+	case "ptrace":
 		return 26
-	case "pause":
+	case "alarm":
 		return 27
-	case "utime":
-		return 28
-	case "access":
+	case "pause":
 		return 29
-	case "nice":
+	case "utime":
 		return 30
-	case "sync":
-		return 31
-	case "kill":
-		return 32
-	case "rename":
+	case "access":
 		return 33
-	case "mkdir":
+	case "nice":
 		return 34
-	case "rmdir":
-		return 35
-	case "dup":
+	case "sync":
 		return 36
-	case "pipe":
+	case "kill":
 		return 37
-	case "times":
+	case "rename":
 		return 38
-	case "brk":
+	case "mkdir":
 		return 39
-	case "setgid":
+	case "rmdir":
 		return 40
-	case "getgid":
+	case "dup":
 		return 41
-	case "geteuid":
+	case "pipe":
 		return 42
-	case "getegid":
+	case "times":
 		return 43
-	case "acct":
-		return 44
-	case "umount2":
+	case "brk":
 		return 45
-	case "ioctl":
+	case "setgid":
 		return 46
-	case "fcntl":
+	case "getgid":
 		return 47
-	case "setpgid":
-		return 48
-	case "umask":
+	case "geteuid":
 		return 49
-	case "chroot":
+	case "getegid":
 		return 50
-	case "ustat":
+	case "acct":
 		return 51
-	case "dup2":
+	case "umount2":
 		return 52
-	case "getppid":
-		return 53
-	case "getpgrp":
+	case "ioctl":
 		return 54
-	case "setsid":
+	case "fcntl":
 		return 55
-	case "sigaction":
-		return 56
-	case "setreuid":
+	case "setpgid":
 		return 57
-	case "setregid":
-		return 58
-	case "sigsuspend":
-		return 59
-	case "sigpending":
+	case "umask":
 		return 60
-	case "sethostname":
+	case "chroot":
 		return 61
-	case "setrlimit":
+	case "ustat":
 		return 62
-	case "getrlimit":
+	case "dup2":
 		return 63
-	case "getrusage":
+	case "getppid":
 		return 64
-	case "gettimeofday":
+	case "getpgrp":
 		return 65
-	case "settimeofday":
+	case "setsid":
 		return 66
-	case "getgroups":
+	case "sigaction":
 		return 67
-	case "setgroups":
-		return 68
-	case "select":
-		return 69
-	case "symlink":
+	case "setreuid":
 		return 70
-	case "readlink":
+	case "setregid":
 		return 71
-	case "uselib":
+	case "sigsuspend":
 		return 72
-	case "swapon":
+	case "sigpending":
 		return 73
-	case "reboot":
+	case "sethostname":
 		return 74
-	case "readdir":
+	case "setrlimit":
 		return 75
-	case "mmap":
+	case "getrlimit":
 		return 76
-	case "munmap":
+	case "getrusage":
 		return 77
-	case "truncate":
+	case "gettimeofday":
 		return 78
-	case "ftruncate":
+	case "settimeofday":
 		return 79
-	case "fchmod":
+	case "getgroups":
 		return 80
-	case "fchown":
+	case "setgroups":
 		return 81
-	case "getpriority":
+	case "select":
 		return 82
-	case "setpriority":
+	case "symlink":
 		return 83
-	case "statfs":
-		return 84
-	case "fstatfs":
+	case "readlink":
 		return 85
-	case "socketcall":
+	case "uselib":
 		return 86
-	case "syslog":
+	case "swapon":
 		return 87
-	case "setitimer":
+	case "reboot":
 		return 88
-	case "getitimer":
+	case "readdir":
 		return 89
-	case "stat":
+	case "mmap":
 		return 90
-	case "lstat":
+	case "munmap":
 		return 91
-	case "fstat":
+	case "truncate":
 		return 92
-	case "vhangup":
+	case "ftruncate":
 		return 93
-	case "syscall":
+	case "fchmod":
 		return 94
-	case "wait4":
+	case "fchown":
 		return 95
-	case "swapoff":
+	case "getpriority":
 		return 96
-	case "sysinfo":
+	case "setpriority":
 		return 97
-	case "ipc":
-		return 98
-	case "fsync":
+	case "statfs":
 		return 99
-	case "sigreturn":
+	case "fstatfs":
 		return 100
-	case "clone":
-		return 101
-	case "setdomainname":
+	case "socketcall":
 		return 102
-	case "uname":
+	case "syslog":
 		return 103
-	case "adjtimex":
+	case "setitimer":
 		return 104
-	case "mprotect":
+	case "getitimer":
 		return 105
-	case "sigprocmask":
+	case "stat":
 		return 106
-	case "init_module":
+	case "lstat":
 		return 107
-	case "delete_module":
+	case "fstat":
 		return 108
-	case "quotactl":
-		return 109
-	case "getpgid":
-		return 110
-	case "fchdir":
+	case "vhangup":
 		return 111
-	case "bdflush":
-		return 112
-	case "sysfs":
+	case "syscall":
 		return 113
-	case "personality":
+	case "wait4":
 		return 114
-	case "setfsuid":
+	case "swapoff":
 		return 115
-	case "setfsgid":
+	case "sysinfo":
 		return 116
-	case "_llseek":
+	case "ipc":
 		return 117
-	case "getdents":
+	case "fsync":
 		return 118
-	case "_newselect":
+	case "sigreturn":
 		return 119
-	case "flock":
+	case "clone":
 		return 120
-	case "msync":
+	case "setdomainname":
 		return 121
-	case "readv":
+	case "uname":
 		return 122
-	case "writev":
-		return 123
-	case "getsid":
+	case "adjtimex":
 		return 124
-	case "fdatasync":
+	case "mprotect":
 		return 125
-	case "_sysctl":
+	case "sigprocmask":
 		return 126
-	case "mlock":
-		return 127
-	case "munlock":
+	case "init_module":
 		return 128
-	case "mlockall":
+	case "delete_module":
 		return 129
-	case "munlockall":
-		return 130
-	case "sched_setparam":
+	case "quotactl":
 		return 131
-	case "sched_getparam":
+	case "getpgid":
 		return 132
-	case "sched_setscheduler":
+	case "fchdir":
 		return 133
-	case "sched_getscheduler":
+	case "bdflush":
 		return 134
-	case "sched_yield":
+	case "sysfs":
 		return 135
-	case "sched_get_priority_max":
+	case "personality":
 		return 136
-	case "sched_get_priority_min":
-		return 137
-	case "sched_rr_get_interval":
+	case "setfsuid":
 		return 138
-	case "nanosleep":
+	case "setfsgid":
 		return 139
-	case "mremap":
+	case "_llseek":
 		return 140
-	case "setresuid":
+	case "getdents":
 		return 141
-	case "getresuid":
+	case "_newselect":
 		return 142
-	case "poll":
+	case "flock":
 		return 143
-	case "nfsservctl":
+	case "msync":
 		return 144
-	case "setresgid":
+	case "readv":
 		return 145
-	case "getresgid":
+	case "writev":
 		return 146
-	case "prctl":
+	case "getsid":
 		return 147
-	case "rt_sigreturn":
+	case "fdatasync":
 		return 148
-	case "rt_sigaction":
+	case "_sysctl":
 		return 149
-	case "rt_sigprocmask":
+	case "mlock":
 		return 150
-	case "rt_sigpending":
+	case "munlock":
 		return 151
-	case "rt_sigtimedwait":
+	case "mlockall":
 		return 152
-	case "rt_sigqueueinfo":
+	case "munlockall":
 		return 153
-	case "rt_sigsuspend":
+	case "sched_setparam":
 		return 154
-	case "pread64":
+	case "sched_getparam":
 		return 155
-	case "pwrite64":
+	case "sched_setscheduler":
 		return 156
-	case "chown":
+	case "sched_getscheduler":
 		return 157
-	case "getcwd":
+	case "sched_yield":
 		return 158
-	case "capget":
+	case "sched_get_priority_max":
 		return 159
-	case "capset":
+	case "sched_get_priority_min":
 		return 160
-	case "sigaltstack":
+	case "sched_rr_get_interval":
 		return 161
-	case "sendfile":
+	case "nanosleep":
 		return 162
-	case "vfork":
+	case "mremap":
 		return 163
-	case "ugetrlimit":
+	case "setresuid":
 		return 164
-	case "mmap2":
+	case "getresuid":
 		return 165
-	case "truncate64":
-		return 166
-	case "ftruncate64":
-		return 167
-	case "stat64":
+	case "poll":
 		return 168
-	case "lstat64":
+	case "nfsservctl":
 		return 169
-	case "fstat64":
+	case "setresgid":
 		return 170
-	case "lchown32":
+	case "getresgid":
 		return 171
-	case "getuid32":
+	case "prctl":
 		return 172
-	case "getgid32":
+	case "rt_sigreturn":
 		return 173
-	case "geteuid32":
+	case "rt_sigaction":
 		return 174
-	case "getegid32":
+	case "rt_sigprocmask":
 		return 175
-	case "setreuid32":
+	case "rt_sigpending":
 		return 176
-	case "setregid32":
+	case "rt_sigtimedwait":
 		return 177
-	case "getgroups32":
+	case "rt_sigqueueinfo":
 		return 178
-	case "setgroups32":
+	case "rt_sigsuspend":
 		return 179
-	case "fchown32":
+	case "pread64":
 		return 180
-	case "setresuid32":
+	case "pwrite64":
 		return 181
-	case "getresuid32":
+	case "chown":
 		return 182
-	case "setresgid32":
+	case "getcwd":
 		return 183
-	case "getresgid32":
+	case "capget":
 		return 184
-	case "chown32":
+	case "capset":
 		return 185
-	case "setuid32":
+	case "sigaltstack":
 		return 186
-	case "setgid32":
+	case "sendfile":
 		return 187
-	case "setfsuid32":
-		return 188
-	case "setfsgid32":
-		return 189
-	case "getdents64":
+	case "vfork":
 		return 190
-	case "pivot_root":
+	case "ugetrlimit":
 		return 191
-	case "mincore":
+	case "mmap2":
 		return 192
-	case "madvise":
+	case "truncate64":
 		return 193
-	case "fcntl64":
+	case "ftruncate64":
 		return 194
-	case "gettid":
+	case "stat64":
 		return 195
-	case "readahead":
+	case "lstat64":
 		return 196
-	case "setxattr":
+	case "fstat64":
 		return 197
-	case "lsetxattr":
+	case "lchown32":
 		return 198
-	case "fsetxattr":
+	case "getuid32":
 		return 199
-	case "getxattr":
+	case "getgid32":
 		return 200
-	case "lgetxattr":
+	case "geteuid32":
 		return 201
-	case "fgetxattr":
+	case "getegid32":
 		return 202
-	case "listxattr":
+	case "setreuid32":
 		return 203
-	case "llistxattr":
+	case "setregid32":
 		return 204
-	case "flistxattr":
+	case "getgroups32":
 		return 205
-	case "removexattr":
+	case "setgroups32":
 		return 206
-	case "lremovexattr":
+	case "fchown32":
 		return 207
-	case "fremovexattr":
+	case "setresuid32":
 		return 208
-	case "tkill":
+	case "getresuid32":
 		return 209
-	case "sendfile64":
+	case "setresgid32":
 		return 210
-	case "futex":
+	case "getresgid32":
 		return 211
-	case "sched_setaffinity":
+	case "chown32":
 		return 212
-	case "sched_getaffinity":
+	case "setuid32":
 		return 213
-	case "io_setup":
+	case "setgid32":
 		return 214
-	case "io_destroy":
+	case "setfsuid32":
 		return 215
-	case "io_getevents":
+	case "setfsgid32":
 		return 216
-	case "io_submit":
+	case "getdents64":
 		return 217
-	case "io_cancel":
+	case "pivot_root":
 		return 218
-	case "exit_group":
+	case "mincore":
 		return 219
-	case "lookup_dcookie":
+	case "madvise":
 		return 220
-	case "epoll_create":
+	case "fcntl64":
 		return 221
-	case "epoll_ctl":
-		return 222
-	case "epoll_wait":
-		return 223
-	case "remap_file_pages":
+	case "gettid":
 		return 224
-	case "set_tid_address":
+	case "readahead":
 		return 225
-	case "timer_create":
+	case "setxattr":
 		return 226
-	case "timer_settime":
+	case "lsetxattr":
 		return 227
-	case "timer_gettime":
+	case "fsetxattr":
 		return 228
-	case "timer_getoverrun":
+	case "getxattr":
 		return 229
-	case "timer_delete":
+	case "lgetxattr":
 		return 230
-	case "clock_settime":
+	case "fgetxattr":
 		return 231
-	case "clock_gettime":
+	case "listxattr":
 		return 232
-	case "clock_getres":
+	case "llistxattr":
 		return 233
-	case "clock_nanosleep":
+	case "flistxattr":
 		return 234
-	case "statfs64":
+	case "removexattr":
 		return 235
-	case "fstatfs64":
+	case "lremovexattr":
 		return 236
-	case "tgkill":
+	case "fremovexattr":
 		return 237
-	case "utimes":
+	case "tkill":
 		return 238
-	case "arm_fadvise64_64":
+	case "sendfile64":
 		return 239
-	case "pciconfig_iobase":
+	case "futex":
 		return 240
-	case "pciconfig_read":
+	case "sched_setaffinity":
 		return 241
-	case "pciconfig_write":
+	case "sched_getaffinity":
 		return 242
-	case "mq_open":
+	case "io_setup":
 		return 243
-	case "mq_unlink":
+	case "io_destroy":
 		return 244
-	case "mq_timedsend":
+	case "io_getevents":
 		return 245
-	case "mq_timedreceive":
+	case "io_submit":
 		return 246
-	case "mq_notify":
+	case "io_cancel":
 		return 247
-	case "mq_getsetattr":
+	case "exit_group":
 		return 248
-	case "waitid":
+	case "lookup_dcookie":
 		return 249
-	case "socket":
+	case "epoll_create":
 		return 250
-	case "bind":
+	case "epoll_ctl":
 		return 251
-	case "connect":
+	case "epoll_wait":
 		return 252
-	case "listen":
+	case "remap_file_pages":
 		return 253
-	case "accept":
-		return 254
-	case "getsockname":
-		return 255
-	case "getpeername":
+	case "set_tid_address":
 		return 256
-	case "socketpair":
+	case "timer_create":
 		return 257
-	case "send":
+	case "timer_settime":
 		return 258
-	case "sendto":
+	case "timer_gettime":
 		return 259
-	case "recv":
+	case "timer_getoverrun":
 		return 260
-	case "recvfrom":
+	case "timer_delete":
 		return 261
-	case "shutdown":
+	case "clock_settime":
 		return 262
-	case "setsockopt":
+	case "clock_gettime":
 		return 263
-	case "getsockopt":
+	case "clock_getres":
 		return 264
-	case "sendmsg":
+	case "clock_nanosleep":
 		return 265
-	case "recvmsg":
+	case "statfs64":
 		return 266
-	case "semop":
+	case "fstatfs64":
 		return 267
-	case "semget":
+	case "tgkill":
 		return 268
-	case "semctl":
+	case "utimes":
 		return 269
-	case "msgsnd":
+	case "arm_fadvise64_64":
 		return 270
-	case "msgrcv":
+	case "pciconfig_iobase":
 		return 271
-	case "msgget":
+	case "pciconfig_read":
 		return 272
-	case "msgctl":
+	case "pciconfig_write":
 		return 273
-	case "shmat":
+	case "mq_open":
 		return 274
-	case "shmdt":
+	case "mq_unlink":
 		return 275
-	case "shmget":
+	case "mq_timedsend":
 		return 276
-	case "shmctl":
+	case "mq_timedreceive":
 		return 277
-	case "add_key":
+	case "mq_notify":
 		return 278
-	case "request_key":
+	case "mq_getsetattr":
 		return 279
-	case "keyctl":
+	case "waitid":
 		return 280
-	case "semtimedop":
+	case "socket":
 		return 281
-	case "vserver":
+	case "bind":
 		return 282
-	case "ioprio_set":
+	case "connect":
 		return 283
-	case "ioprio_get":
+	case "listen":
 		return 284
-	case "inotify_init":
+	case "accept":
 		return 285
-	case "inotify_add_watch":
+	case "getsockname":
 		return 286
-	case "inotify_rm_watch":
+	case "getpeername":
 		return 287
-	case "mbind":
+	case "socketpair":
 		return 288
-	case "get_mempolicy":
+	case "send":
 		return 289
-	case "set_mempolicy":
+	case "sendto":
 		return 290
-	case "openat":
+	case "recv":
 		return 291
-	case "mkdirat":
+	case "recvfrom":
 		return 292
-	case "mknodat":
+	case "shutdown":
 		return 293
-	case "fchownat":
+	case "setsockopt":
 		return 294
-	case "futimesat":
+	case "getsockopt":
 		return 295
-	case "fstatat64":
+	case "sendmsg":
 		return 296
-	case "unlinkat":
+	case "recvmsg":
 		return 297
-	case "renameat":
+	case "semop":
 		return 298
-	case "linkat":
+	case "semget":
 		return 299
-	case "symlinkat":
+	case "semctl":
 		return 300
-	case "readlinkat":
+	case "msgsnd":
 		return 301
-	case "fchmodat":
+	case "msgrcv":
 		return 302
-	case "faccessat":
+	case "msgget":
 		return 303
-	case "pselect6":
+	case "msgctl":
 		return 304
-	case "ppoll":
+	case "shmat":
 		return 305
-	case "unshare":
+	case "shmdt":
 		return 306
-	case "set_robust_list":
+	case "shmget":
 		return 307
-	case "get_robust_list":
+	case "shmctl":
 		return 308
-	case "splice":
+	case "add_key":
 		return 309
-	case "arm_sync_file_range":
+	case "request_key":
 		return 310
-	case "tee":
+	case "keyctl":
 		return 311
-	case "vmsplice":
+	case "semtimedop":
 		return 312
-	case "move_pages":
+	case "vserver":
 		return 313
-	case "getcpu":
+	case "ioprio_set":
 		return 314
-	case "epoll_pwait":
+	case "ioprio_get":
 		return 315
-	case "kexec_load":
+	case "inotify_init":
 		return 316
-	case "utimensat":
+	case "inotify_add_watch":
 		return 317
-	case "signalfd":
+	case "inotify_rm_watch":
 		return 318
-	case "timerfd_create":
+	case "mbind":
 		return 319
-	case "eventfd":
+	case "get_mempolicy":
 		return 320
-	case "fallocate":
+	case "set_mempolicy":
 		return 321
-	case "timerfd_settime":
+	case "openat":
 		return 322
-	case "timerfd_gettime":
+	case "mkdirat":
 		return 323
-	case "signalfd4":
+	case "mknodat":
 		return 324
-	case "eventfd2":
+	case "fchownat":
 		return 325
-	case "epoll_create1":
+	case "futimesat":
 		return 326
-	case "dup3":
+	case "fstatat64":
 		return 327
-	case "pipe2":
+	case "unlinkat":
 		return 328
-	case "inotify_init1":
+	case "renameat":
 		return 329
-	case "preadv":
+	case "linkat":
 		return 330
-	case "pwritev":
+	case "symlinkat":
 		return 331
-	case "rt_tgsigqueueinfo":
+	case "readlinkat":
 		return 332
-	case "perf_event_open":
+	case "fchmodat":
 		return 333
-	case "recvmmsg":
+	case "faccessat":
 		return 334
-	case "accept4":
+	case "pselect6":
 		return 335
-	case "fanotify_init":
+	case "ppoll":
 		return 336
-	case "fanotify_mark":
+	case "unshare":
 		return 337
-	case "prlimit64":
+	case "set_robust_list":
 		return 338
-	case "name_to_handle_at":
+	case "get_robust_list":
 		return 339
-	case "open_by_handle_at":
+	case "splice":
 		return 340
-	case "clock_adjtime":
+	case "sync_file_range2":
 		return 341
-	case "syncfs":
+	case "arm_sync_file_range":
+		return 341
+	case "tee":
 		return 342
-	case "sendmmsg":
+	case "vmsplice":
 		return 343
-	case "setns":
+	case "move_pages":
 		return 344
-	case "process_vm_readv":
+	case "getcpu":
 		return 345
-	case "process_vm_writev":
+	case "epoll_pwait":
 		return 346
+	case "kexec_load":
+		return 347
+	case "utimensat":
+		return 348
+	case "signalfd":
+		return 349
+	case "timerfd_create":
+		return 350
+	case "eventfd":
+		return 351
+	case "fallocate":
+		return 352
+	case "timerfd_settime":
+		return 353
+	case "timerfd_gettime":
+		return 354
+	case "signalfd4":
+		return 355
+	case "eventfd2":
+		return 356
+	case "epoll_create1":
+		return 357
+	case "dup3":
+		return 358
+	case "pipe2":
+		return 359
+	case "inotify_init1":
+		return 360
+	case "preadv":
+		return 361
+	case "pwritev":
+		return 362
+	case "rt_tgsigqueueinfo":
+		return 363
+	case "perf_event_open":
+		return 364
+	case "recvmmsg":
+		return 365
+	case "accept4":
+		return 366
+	case "fanotify_init":
+		return 367
+	case "fanotify_mark":
+		return 368
+	case "prlimit64":
+		return 369
+	case "name_to_handle_at":
+		return 370
+	case "open_by_handle_at":
+		return 371
+	case "clock_adjtime":
+		return 372
+	case "syncfs":
+		return 373
+	case "sendmmsg":
+		return 374
+	case "setns":
+		return 375
+	case "process_vm_readv":
+		return 376
+	case "process_vm_writev":
+		return 377
+	case "kcmp":
+		return 378
+	case "finit_module":
+		return 379
+	case "sched_setattr":
+		return 380
+	case "sched_getattr":
+		return 381
+	case "renameat2":
+		return 382
+	case "seccomp":
+		return 383
+	case "getrandom":
+		return 384
+	case "memfd_create":
+		return 385
+	case "bpf":
+		return 386
+	case "execveat":
+		return 387
+	case "userfaultfd":
+		return 388
+	case "membarrier":
+		return 389
 	}
 	return -1
 }
 
 func GetArgsTypes(name string) []ArgType {
 	switch name {
-	case "oabi_syscall_base":
-		return []ArgType(nil)
-	case "syscall_base":
-		return []ArgType(nil)
 	case "restart_syscall":
 		return []ArgType(nil)
 	case "exit":
@@ -2026,6 +2066,8 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType(nil)
 	case "splice":
 		return []ArgType{ARG_INT, ARG_PTR, ARG_INT, ARG_PTR, ARG_INT, ARG_INT}
+	case "sync_file_range2":
+		return []ArgType(nil)
 	case "arm_sync_file_range":
 		return []ArgType(nil)
 	case "tee":
@@ -2099,6 +2141,30 @@ func GetArgsTypes(name string) []ArgType {
 	case "process_vm_readv":
 		return []ArgType(nil)
 	case "process_vm_writev":
+		return []ArgType(nil)
+	case "kcmp":
+		return []ArgType(nil)
+	case "finit_module":
+		return []ArgType(nil)
+	case "sched_setattr":
+		return []ArgType(nil)
+	case "sched_getattr":
+		return []ArgType(nil)
+	case "renameat2":
+		return []ArgType(nil)
+	case "seccomp":
+		return []ArgType(nil)
+	case "getrandom":
+		return []ArgType(nil)
+	case "memfd_create":
+		return []ArgType(nil)
+	case "bpf":
+		return []ArgType(nil)
+	case "execveat":
+		return []ArgType(nil)
+	case "userfaultfd":
+		return []ArgType(nil)
+	case "membarrier":
 		return []ArgType(nil)
 	}
 	return nil

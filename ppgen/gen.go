@@ -196,7 +196,7 @@ func parseSyscalls(OS, arch string) ([]sc, error) {
 		return nil, err
 	}
 	var syscalls []sc
-	if OS == "linux" && (arch == "amd64" || arch == "386" || arch == "ppc64" || arch == "arm64") {
+	if OS == "linux" && (arch != "ppc64le") {
 		scs, err := parseLinuxNumbers(arch)
 		if err != nil {
 			return nil, err

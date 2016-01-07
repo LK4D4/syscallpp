@@ -585,8 +585,6 @@ func GetName(num int) string {
 	case 290:
 		return "futimesat"
 	case 291:
-		return "newfstatat"
-	case 291:
 		return "fstatat64"
 	case 292:
 		return "unlinkat"
@@ -1320,8 +1318,6 @@ func GetNum(name string) int {
 		return 289
 	case "futimesat":
 		return 290
-	case "newfstatat":
-		return 291
 	case "fstatat64":
 		return 291
 	case "unlinkat":
@@ -2056,8 +2052,6 @@ func GetArgsTypes(name string) []ArgType {
 		return []ArgType{ARG_INT, ARG_STR, ARG_INT, ARG_INT, ARG_INT}
 	case "futimesat":
 		return []ArgType{ARG_INT, ARG_PTR, ARG_PTR}
-	case "newfstatat":
-		return []ArgType(nil)
 	case "fstatat64":
 		return []ArgType(nil)
 	case "unlinkat":

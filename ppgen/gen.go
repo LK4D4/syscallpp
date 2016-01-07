@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 )
 
@@ -51,6 +52,20 @@ type sc struct {
 	name      string
 	number    int
 	argsTypes []string
+}
+
+type numSort []sc
+
+func (s numSort) Len() int {
+	return len(s)
+}
+
+func (s numSort) Less(i, j int) bool {
+	return s[i].number < s[j].number
+}
+
+func (s numSort) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
 }
 
 type generator struct {
@@ -181,7 +196,7 @@ func parseSyscalls(OS, arch string) ([]sc, error) {
 		return nil, err
 	}
 	var syscalls []sc
-	if OS == "linux" && (arch == "amd64" || arch == "386" || arch == "ppc64") {
+	if OS == "linux" && (arch == "amd64" || arch == "386" || arch == "ppc64" || arch == "arm64") {
 		scs, err := parseLinuxNumbers(arch)
 		if err != nil {
 			return nil, err
@@ -226,6 +241,7 @@ func writePkg(OS, arch string) error {
 	if err != nil {
 		return err
 	}
+	sort.Sort(numSort(scs))
 	g := &generator{
 		syscalls: scs,
 		arch:     arch,
